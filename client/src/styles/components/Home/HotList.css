@@ -1,0 +1,15 @@
+.hotList{
+    display: flex;
+    /* width: 100%; */
+    flex-direction: row;
+}
+/* .hotList ul{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+} */
+
+/* .hotList ul li{
+    width: 100%;
+} */

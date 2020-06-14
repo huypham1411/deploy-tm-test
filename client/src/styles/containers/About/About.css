@@ -1,0 +1,30 @@
+.About{
+  display: flex;
+  max-width: 100%;
+  flex-direction: column;
+}
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/* ul {
+
+  list-style: none;
+} */
+
+/* li {
+  list-style-type: none;
+} */
+
+/* .container {
+  max-width: 1140px;
+  margin: 0 auto;
+} */
+
+.About a {
+  text-decoration: none;
+}
+/*# sourceMappingURL=About.css.map */

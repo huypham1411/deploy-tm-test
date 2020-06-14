@@ -1,0 +1,16 @@
+.home{
+    margin-top:30px;
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    width: auto;
+    justify-content: center;
+}
+.home li{
+    list-style: none;
+}
+.wallpaper{
+    max-width: fit-content;
+    position: absolute;
+    height: fit-content
+}

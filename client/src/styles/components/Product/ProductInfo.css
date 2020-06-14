@@ -1,0 +1,19 @@
+.productInfo{
+    display: flex;
+    width: fit-content;
+}
+.productInfoImg{
+    display: flex;
+    width: 300px;
+    height: auto;
+}
+.productDetail{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 30px;
+}
+.productDetail p{
+    padding: 10px 10px 0 0;
+    
+}

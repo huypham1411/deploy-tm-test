@@ -1,0 +1,14 @@
+.SearchPage{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.SearchPage .searchResult{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.SearchPage .card-container{
+    width: 30%
+}

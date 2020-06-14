@@ -1,0 +1,155 @@
+
+.nav-bar {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  background: #b0eacd;
+  height: 47px;
+  max-width: auto;
+  max-height: fit-content;
+  width: auto;
+  justify-content: space-between;
+}
+
+@media only screen and (max-width: 768px) {
+  .nav-bar {
+    position: relative;
+  }
+
+  .navbar-collapse {
+    position: absolute;
+    top: 100%;
+    left: 0;
+
+    width: 100%;
+  }
+}
+.navbar-nav {
+  width: 100%;
+  background-color: #b0eacd;
+}
+
+.navbar-collapse {
+  flex-flow: column nowrap;
+}
+
+#searchInput {
+  width: 229px;
+  height: 16px;
+  background: #ffffff;
+  border-radius: 20px;
+  border: none;
+  max-width: inherit;
+  display: flex;
+}
+
+#searchBar {
+  display: flex;
+  flex: 5;
+  justify-content: flex-end;
+  margin-right: 30px;
+  width: fit-content;
+  max-width: 100%;
+}
+
+.nav-bar ul {
+  display: flex;
+  list-style: none;
+  flex: 5;
+  justify-content: space-around;
+}
+
+.nav-bar a {
+  text-decoration: none;
+  padding: 13px;
+}
+
+.nav-bar li {
+  font-family: Fondamento;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 21px;
+  color: #000;
+}
+
+.nav-bar .active li {
+  /* class active dùng trong react-router*/
+  color: #fff;
+}
+.nav-bar .img-container {
+  width: auto;
+  flex: 1;
+  margin-right: 20px;
+  display: flex;
+  max-width: 100%;
+  justify-content: flex-end;
+}
+/*old master css*/
+/* .nav-bar{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background: #B0EACD;
+    height: 47px;
+    max-width: auto;
+    max-height: fit-content;
+    width: auto;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+#searchInput{
+    width: 229px;
+    height: 16px;
+    background: #FFFFFF;
+    border-radius: 20px;
+    border: none;
+    max-width: inherit;
+    display: flex;
+    padding: 10px;
+}
+
+#searchBar{
+    display: flex;
+    flex:5;
+    justify-content: flex-end;
+    margin-right: 30px;
+    width: fit-content;
+    max-width: 100%;
+}
+
+.nav-bar ul{
+    display: flex;
+    list-style: none;
+    flex:5;
+    justify-content: space-around;
+}
+
+.nav-bar a{
+    text-decoration: none;
+    padding: 13px;
+}
+
+.nav-bar li{
+    font-family: Fondamento;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 21px;
+    color: #000;
+}
+*/
+.nav-bar .active li{
+    /* class active dùng trong react-router*/
+    color:#fff;
+}
+.nav-bar .img-container{
+    width: auto;
+    flex: 1;
+    margin-right: 20px;
+    display: flex;
+    max-width: 100%;
+    justify-content: flex-end;
+} 
+

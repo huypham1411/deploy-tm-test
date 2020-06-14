@@ -1,0 +1,32 @@
+.cardProduct{
+    display: flex;
+    width: auto;
+    flex-direction: column;
+}
+.detail{
+    display: flex;
+    flex-direction: row;
+}
+.productDetail{
+    display: flex;
+    flex-direction: column;
+}
+.productDetail h1{
+    color: rgb(59, 214, 59);
+}
+.productDetail p{
+    padding-top: 0px;
+}
+.productDetail div{
+    margin: 10px;
+}
+.numberOfProducts{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.addBtn{
+    background-color: #B0EACD;
+    height: fit-content;
+    text-align: center;
+}

@@ -1,0 +1,20 @@
+.Policy {
+    display: flex;
+    justify-content: center;
+}
+
+.policyInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 1440px;
+}
+
+.policyInfo h1{
+    margin: 10px 10px 10px 0;
+}
+
+
+pre{
+    word-wrap:break-word;
+}

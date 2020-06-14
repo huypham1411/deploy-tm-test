@@ -1,0 +1,13 @@
+.pagination li{
+    list-style: none;
+    padding: 20px;
+}
+.pagination{
+    display: flex;
+    flex-direction: row;
+}
+.pagination a.active{
+    background-color: #4CAF50;
+    color: white;
+}
+.pagination a:hover:not(.active) {background-color: #ddd;}

@@ -1,0 +1,54 @@
+.Forgot_pass input[type=email] {
+    width: 40%;
+    padding: 5px 10px;
+    /* margin: auto; */
+    /* display: inline-block; */
+    border: 1px solid rgb(0, 0, 0);
+    /* box-sizing: border-box; */
+    font-family: Fondamento;
+    display: flex;
+}
+
+.Forgot_pass {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    justify-items: flex-start;
+    margin: 40px;
+    width: auto
+}
+.reset-btn {
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+}
+.btn-reset {
+  font-family: Fondamento;
+  border-radius: 20px;
+  background-color:#B0EACD;
+  background: #B0EACD;
+  border: 1px solid #FFFFFF;
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  /* padding: 10px 14px; */
+  /* margin: 8px 10px 20px 100px; */
+  border: none;
+  cursor: pointer;
+  align-items: center;
+  width: 20%;
+}
+
+.forget-pass-text h1 {
+  padding-bottom: 20px;
+  font-family: Fondamento;
+}
+
+.forget-pass-text p {
+  padding-bottom: 20px;
+}
+
+
+.input-mail {
+  padding-bottom: 20px;
+}
+
