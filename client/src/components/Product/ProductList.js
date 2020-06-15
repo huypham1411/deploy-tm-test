@@ -23,7 +23,7 @@ function ProductList(){
         <nav>
             <ul className="Product-list">
             <li className="Fruit">
-            <NavLink to='/Products/?filter=fruit' isActive={checkActive} onClick={()=>{dispatch(filterChoose('fruit'));dispatch(pageReset())}} activeStyle={styles}><p>Fruits</p></NavLink>
+            <NavLink to='/Products/?filter=fruit' isActive={checkActive} onClick={()=>{dispatch(filterChoose('fruit'));dispatch(pageReset())}} activeStyle={styles}><li>Fruits</li></NavLink>
             </li>
             <li>
             <NavLink to='/Products/?filter=vegetables' activeStyle={styles} onClick={()=>{dispatch(filterChoose('vegetables'));dispatch(pageReset())}}><li>Vegetables</li></NavLink>

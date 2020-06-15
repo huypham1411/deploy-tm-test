@@ -1,7 +1,7 @@
 {
   "name": "server",
   "version": "1.0.0",
-  "description": "",
+  "description": "test deploy react app",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -22,5 +22,14 @@
     "nodemailer": "^6.4.8",
     "nodemon": "^2.0.3",
     "password-generator": "^2.3.2"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/huypham1411/deploy-tm-test.git"
+  },
+  "bugs": {
+    "url": "https://github.com/huypham1411/deploy-tm-test/issues"
+  },
+  "homepage": "https://github.com/huypham1411/deploy-tm-test#readme"
 }
