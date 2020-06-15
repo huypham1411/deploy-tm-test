@@ -214,4 +214,40 @@ router.get('/',async (req,res)=>{
   }
   catch(err){res.status(404).send(err)}
 })
+
+
+router.put('/:id',async (req,res)=>{
+  Product.findOne({id : req.params.id}, function (err, product) {
+      if (err) return res.send(err)
+
+      if (typeof req.body.name !== 'undefined') {
+          product.name = req.body.name;
+      }
+      if (typeof req.body.type !== 'undefined') {
+          product.type = req.body.type;
+      }
+      if (typeof req.file !== 'undefined') {
+          product.avatar = req.file.path;
+      }
+      if (typeof req.body.status !== 'undefined') {
+          product.status = req.body.status;
+      }
+      if (typeof req.body.description !== 'undefined') {
+          product.description = req.body.description;
+      }
+      if (typeof req.body.price !== 'undefined') {
+        product.price = req.body.price;
+      }
+
+      product.save(function (err) {
+          if (err) return res.json(err);
+
+          res.json({
+              message: 'Update succes',
+              data: product
+          })
+      })
+  })
+})
+
  module.exports =router;
