@@ -41,6 +41,7 @@
   border: none;
   max-width: inherit;
   display: flex;
+  padding: 10px;
 }
 
 #searchBar {
