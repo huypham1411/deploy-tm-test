@@ -10,7 +10,7 @@ import searchReducer from './reducer/searchReducer';
 import paginationReducer from './reducer/paginationReducer';
 import { Provider } from 'react-redux';
 import { createStore,combineReducers } from 'redux';
-
+// var socket = io.connect("http://localhost:3030");
 // import "bootstrap/dist/css/bootstrap.css";
 
 // const store = createStore(cartReducer);
