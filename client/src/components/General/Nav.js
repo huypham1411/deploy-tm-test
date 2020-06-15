@@ -4,16 +4,16 @@ import { NavLink } from 'react-router-dom';
 import {useDispatch} from 'react-redux';
 import cart from '../../assets/cardIcon/cart.png';
 import { Link,useHistory } from 'react-router-dom';
-import {sortChoose,filterChoose} from '../../action/sort-action';
-import {pageReset} from '../../action/paginate';
+// import {sortChoose,filterChoose} from '../../action/sort-action';
+// import {pageReset} from '../../action/paginate';
 import {searching} from '../../action/search-field';
 import Axios from 'axios';
-import Cart from '../General/Cart';
+// import Cart from '../General/Cart';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 
 const Nav = () => {
-    const [appear,setAppear]=useState(false)
+    // const [appear,setAppear]=useState(false)
     const history = useHistory();
     const dispatch = useDispatch();
     const [searchInput,setSearchInput]=useState('')
@@ -77,7 +77,7 @@ const Nav = () => {
     </div>
 
       <div id="searchBar">
-        <input type="search" id="searchInput"></input>
+      <input type="search" id="searchInput" value={searchInput} onChange={(value)=>setSearchInput(value.target.value)} onKeyDown={e=>getList(e)}></input>
       </div>
       {/* <div className="img-container"><img src={cart} onClick={()=>{setAppear(!appear)}} alt="cart"></img></div>
             {appear&&<Cart/>}
