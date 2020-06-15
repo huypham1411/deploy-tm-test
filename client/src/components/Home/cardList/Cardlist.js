@@ -21,10 +21,10 @@ class Cardlist extends React.Component {
   }
  async componentDidMount(){
   let link='';
-  if(this.props.route){link=`http://localhost:3030/products${this.props.route==='/'?`?page=${this.props.number}`:`${this.props.route}&page=${this.props.number}`}`}
-  if(this.props.filter){link=`http://localhost:3030/products${this.props.filter==='/'?`?page=${this.props.number}`:`?${this.props.filter}&page=${this.props.number}`}`}
-  if(this.props.route&&this.props.filter&& this.props.route!=='/' && this.props.filter!=='/'){link=`http://localhost:3030/products${this.props.route==='/'||this.props.filter==='/'?`?page=${this.props.number}`:`${this.props.route}&page=${this.props.number}&${this.props.filter}`}`}
-  if(this.props.route==='/'&&this.props.filter ==='/'){link=`http://localhost:3030/products?page=${this.props.number}`} 
+  if(this.props.route){link=`/products${this.props.route==='/'?`?page=${this.props.number}`:`${this.props.route}&page=${this.props.number}`}`}
+  if(this.props.filter){link=`/products${this.props.filter==='/'?`?page=${this.props.number}`:`?${this.props.filter}&page=${this.props.number}`}`}
+  if(this.props.route&&this.props.filter&& this.props.route!=='/' && this.props.filter!=='/'){link=`/products${this.props.route==='/'||this.props.filter==='/'?`?page=${this.props.number}`:`${this.props.route}&page=${this.props.number}&${this.props.filter}`}`}
+  if(this.props.route==='/'&&this.props.filter ==='/'){link=`/products?page=${this.props.number}`} 
   do
    {
     // console.log('num',this.props.number)
@@ -39,10 +39,10 @@ class Cardlist extends React.Component {
   // console.log(`http://localhost:3030/products${this.props.route==='/'?`?page=${this.props.number}`:`${this.props.route}&page=${this.props.number}`}`)
     if(prevProps.filter!==this.props.filter||prevProps.route!==this.props.route||this.props.number!==prevProps.number){
       let link='';
-    if(this.props.route&&this.props.filter==='/'){link=`http://localhost:3030/products${this.props.route==='/'?`?page=${this.props.number}`:`${this.props.route}&page=${this.props.number}`}`}
-    if(this.props.filter&&this.props.route==='/'){link=`http://localhost:3030/products?${this.props.filter==='/'?`?page=${this.props.number}`:`${this.props.filter}&page=${this.props.number}`}`}
-    if(this.props.route&&this.props.filter && this.props.route!=='/' && this.props.filter!=='/'){link=`http://localhost:3030/products${this.props.route}&page=${this.props.number}&${this.props.filter}`}
-    if(this.props.route==='/'&&this.props.filter ==='/'){link=`http://localhost:3030/products?page=${this.props.number}`} 
+    if(this.props.route&&this.props.filter==='/'){link=`/products${this.props.route==='/'?`?page=${this.props.number}`:`${this.props.route}&page=${this.props.number}`}`}
+    if(this.props.filter&&this.props.route==='/'){link=`/products?${this.props.filter==='/'?`?page=${this.props.number}`:`${this.props.filter}&page=${this.props.number}`}`}
+    if(this.props.route&&this.props.filter && this.props.route!=='/' && this.props.filter!=='/'){link=`/products${this.props.route}&page=${this.props.number}&${this.props.filter}`}
+    if(this.props.route==='/'&&this.props.filter ==='/'){link=`/products?page=${this.props.number}`} 
   
       do
       { 

@@ -15,7 +15,7 @@ function ProductInfo({ match }) {
 
     const fetchItems = async () => {
         const data = await fetch(
-            `http://localhost:3030/products/${match.params.id}`
+            `/products/${match.params.id}`
         )
         const items = await data.json();
         setItems(items);

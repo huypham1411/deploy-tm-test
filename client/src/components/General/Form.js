@@ -17,7 +17,7 @@ const Form =()=>{
     const loginFunciton=()=>{
         //e.preventDefault();
         
-        axios.post('http://localhost:3030/login',{email,password})
+        axios.post('/login',{email,password})
             .then((data)=>{
                 //console.log(data.headers['auth-token'])
             localStorage.setItem('auth-token',data.headers['auth-token'])
@@ -46,7 +46,7 @@ const Form =()=>{
                 role: 'facebook',
             }
 
-            axios.post('http://localhost:3030/social', data)
+            axios.post('/social', data)
             .then(res2 => {
                 if (res2.data.status == 'success') {
                     alert('success')
@@ -71,7 +71,7 @@ const Form =()=>{
             role: 'gmail'
         }
 
-        axios.post('http://localhost:3030/social', data)
+        axios.post('/social', data)
         .then(res => {
             console.log(res)
             if (res.data.status == 'success') {
