@@ -12,6 +12,7 @@ class Total extends Component{
     }
     checkLogin(){
         const lg=localStorage.getItem('auth-token')
+        console.log(lg);
         if(!lg){alert("Bạn chưa đăng nhập. Vui lòng đăng nhập để tiếp tục");return;}
         else
         {
