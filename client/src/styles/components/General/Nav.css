@@ -1,14 +1,14 @@
-
 .nav-bar {
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
+  justify-content: space-between;
+
   background: #b0eacd;
   height: 47px;
   max-width: auto;
   max-height: fit-content;
   width: auto;
-  justify-content: space-between;
 }
 
 @media only screen and (max-width: 768px) {
@@ -41,7 +41,6 @@
   border: none;
   max-width: inherit;
   display: flex;
-  padding: 10px;
 }
 
 #searchBar {
@@ -51,6 +50,10 @@
   margin-right: 30px;
   width: fit-content;
   max-width: 100%;
+  padding: 10px;
+}
+#searchBar input{
+  padding: 10px
 }
 
 .nav-bar ul {
@@ -141,16 +144,15 @@
     color: #000;
 }
 */
-.nav-bar .active li{
-    /* class active dùng trong react-router*/
-    color:#fff;
+.nav-bar .active li {
+  /* class active dùng trong react-router*/
+  color: #fff;
 }
-.nav-bar .img-container{
-    width: auto;
-    flex: 1;
-    margin-right: 20px;
-    display: flex;
-    max-width: 100%;
-    justify-content: flex-end;
-} 
-
+.nav-bar .img-container {
+  width: auto;
+  flex: 1;
+  margin-right: 20px;
+  display: flex;
+  max-width: 100%;
+  justify-content: flex-end;
+}
