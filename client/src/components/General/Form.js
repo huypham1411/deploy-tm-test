@@ -71,7 +71,7 @@ const Form =()=>{
             role: 'gmail'
         }
 
-        axios.post('localhost:3030/social', data)
+        axios.post('https://uncle-veggies.herokuapp.com/social', data)
         .then(res => {
             console.log(res)
             if (res.data.status == 'success') {
