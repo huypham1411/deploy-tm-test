@@ -11,7 +11,7 @@ import GoogleLogin from 'react-google-login';
 
 const Form =()=>{
     const [email,setEmail]=useState('');
-    const [address,setAddress]=useState('ahihu');
+    // const [address,setAddress]=useState('ahihu');
     const [password,setPassword]=useState('');
     const dispatch = useDispatch();
     const loginFunciton=()=>{
@@ -71,7 +71,7 @@ const Form =()=>{
             role: 'gmail'
         }
 
-        axios.post('/social', data)
+        axios.post('localhost:3030/social', data)
         .then(res => {
             console.log(res)
             if (res.data.status == 'success') {
