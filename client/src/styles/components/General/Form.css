@@ -1,7 +1,8 @@
 /* body {font-family: Arial, Helvetica, sans-serif;} */
 
 /* Full-width input fields */
-.login-wrap input[type=text], input[type=password] {
+.login-wrap input[type="text"],
+input[type="password"] {
   width: 100%;
   padding: 8px 15px;
   margin: auto;
@@ -13,14 +14,14 @@
 }
 
 .headerForm {
-    margin: 20px;
+  margin: 20px;
 }
-.social{
+.social {
   flex-direction: column;
   width: fit-content;
   justify-content: center;
   align-items: center;
-  padding-left: 10px;
+  /* padding-left: 10px; */
 }
 
 .FB_login {
@@ -28,7 +29,7 @@
   width: auto;
   height: auto;
 }
-.FB_login button{
+.FB_login button {
   width: 200px;
   height: 60px;
   justify-content: center;
@@ -41,7 +42,7 @@
   width: max-content;
   height: auto;
 }
-.GG_login button{
+.GG_login button {
   width: 200px;
   height: 60px;
   justify-content: center;
@@ -49,40 +50,37 @@
   font-size: 10px;
 }
 
-
 button:hover {
   opacity: 0.8;
 }
 
-
 .headerForm h2 {
-    font-family: Fondamento;
-    display: inline;
+  font-family: Fondamento;
+  display: inline;
 }
 
 .logo {
-    width: 30%;
+  width: 30%;
 }
 
 .forget {
-    font-family: Fondamento;
-    text-align: right;
-    margin-bottom: 5px;
+  font-family: Fondamento;
+  text-align: center;
+  margin-bottom: 5px;
 }
 
 .forget a:-webkit-any-link {
-    color: black;
-    cursor: pointer;
-    text-decoration: underline;
+  color: black;
+  cursor: pointer;
+  text-decoration: underline;
 }
 
-
-
-input:focus, textarea:focus, select:focus {
+input:focus,
+textarea:focus,
+select:focus {
   outline-offset: 0px !important;
   outline: none !important;
 }
-
 
 .modal-content {
   position: absolute;
@@ -90,33 +88,38 @@ input:focus, textarea:focus, select:focus {
   height: fit-content;
   right: 100px;
   top: 80px;
-  background: #D9F8E9;
+  background: #d9f8e9;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-}
 
+  z-index: 100;
+}
 
 .animate {
   -webkit-animation: animatezoom 0.6s;
-  animation: animatezoom 0.6s
+  animation: animatezoom 0.6s;
 }
-
-
 
 @-webkit-keyframes animatezoom {
-  from {-webkit-transform: scale(0)} 
-  to {-webkit-transform: scale(1)}
-}
-  
-@keyframes animatezoom {
-  from {transform: scale(0)} 
-  to {transform: scale(1)}
+  from {
+    -webkit-transform: scale(0);
+  }
+  to {
+    -webkit-transform: scale(1);
+  }
 }
 
+@keyframes animatezoom {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
 
 .form-container {
-    padding: 8px;
-    padding-top: 20px;
-    display: flex;
-    justify-content: center;
+  padding: 8px;
+  padding-top: 20px;
+  display: flex;
+  justify-content: center;
 }
-
