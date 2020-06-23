@@ -1,0 +1,44 @@
+.card{
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    margin: 10px;
+    text-align: left;    
+    /* margin-left: 30px;*/
+    height: fit-content;
+    min-width: 150px;
+    flex-wrap: wrap;
+    height: 350px;
+}
+.productImg{
+    min-width: 150px;
+    min-height: 150px;
+    width: 200px;
+    height: 200px;
+}
+.productImg img{
+    width: 100%;
+}
+.productName{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    min-width: 150px;
+    /* line-height: 16px;    
+    max-height: 32px;      */
+    -webkit-line-clamp: 1; /* Write the number of 
+                              lines you want to be 
+                              displayed */
+    /* -webkit-box-orient: vertical; */
+}
+.productName h4{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-width: 150px;
+    line-height: normal;
+}
+.cartIcon{
+    display: flex;  
+    justify-content: center;
+    margin-bottom: 10px;
+}

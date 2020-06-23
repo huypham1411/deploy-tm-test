@@ -1,0 +1,11 @@
+.quantitiesBtn{
+    display: flex;
+    flex-direction: row;
+}
+.inputne{
+    width: 30px;
+}
+.quantitiesBtn button{
+    background-color: #B0EACD;
+    border: none;
+}

@@ -1,0 +1,60 @@
+.header{
+display: flex;
+flex-direction: row;
+background: linear-gradient(97.1deg, #F9FCFB 85.39%, rgba(255, 255, 255, 0) 121.98%), #B0EACD;
+/* justify-content: space-around; */
+/* max-width: 100%;
+max-height: 100%; */
+width: 100%;
+flex-wrap: wrap;
+}
+
+
+.usr-name{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.usr-name p{
+    margin-bottom: 0px;
+}
+
+.iconImg{
+    display: flex;
+    width: 70%;
+    height: auto;
+    /* max-width: 100%;
+    margin-left:35px; */
+}
+.iconImg img{
+    min-width: 40%;
+    width: 70%;
+}
+
+.btnLocation{
+    display: flex;
+    flex-direction: row;
+    /* flex:1; */
+    justify-content:flex-end ;
+    align-items: center;
+    /* align-content: space-around; */
+    /* position: relative; */
+    width: 30%;
+    /* margin-right: 60px; */
+}
+/* #btn1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 50%;
+    margin: 20px;
+}
+
+#btn2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 50%;
+    margin: 20px;
+} */

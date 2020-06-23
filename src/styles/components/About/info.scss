@@ -1,0 +1,32 @@
+.info {
+  font-family: "Lobster", cursive;
+}
+//test
+
+.info-wrap {
+  margin-top: 50px;
+  display: flex;
+  flex-flow: row, nowrap;
+  justify-content: space-between;
+}
+
+.info-text {
+  &__wrap {
+  }
+
+  h3 {
+    margin-top: 40px;
+  }
+
+  p {
+    margin-top: 16px;
+    padding-left: 30px;
+  }
+}
+
+//image
+.info-image {
+  img {
+    border-radius: 10px;
+  }
+}
