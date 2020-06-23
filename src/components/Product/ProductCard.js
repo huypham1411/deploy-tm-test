@@ -11,6 +11,7 @@ class ProductCard extends React.Component {
             quantity: 1
         }
     }
+    
     handleClickAdd = (id) => {
         this.props.addToCart(id, this.state.quantity)
     }
