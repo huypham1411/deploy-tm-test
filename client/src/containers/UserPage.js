@@ -49,7 +49,7 @@ class UserPage extends React.Component {
     }
 
     update() {
-        const url = '/user/' + this.state.id
+        const url = 'https://uncle-veggies.herokuapp.com/user/' + this.state.id
         axios.put(url, {
             name : this.state.name,
             email : this.state.email,

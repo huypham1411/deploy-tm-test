@@ -13,7 +13,7 @@ class Total extends Component{
     }
     checkLogin(){
         const lg=localStorage.getItem('auth-token')
-        if(!lg){alert("Bạn chưa đăng nhập. Vui lòng đăng nhập để tiếp tục");return;}
+        if(!lg){alert("You need to login!!");return;}
         else
         {
             this.setState({appear:!this.state.appear})
@@ -27,7 +27,7 @@ class Total extends Component{
             paymentData:data
         }
         const token = localStorage.getItem('auth-token');
-        Axios.post('uncle-veggies.herokuapp.com/payment',variables,{headers:{"auth-token":token}}).then(data=>
+        Axios.post('https://uncle-veggies.herokuapp.com/payment',variables,{headers:{"auth-token":token}}).then(data=>
        { if(data.data.success){
             alert("Buy success!!");
             this.props.addedItems.forEach(element => {
