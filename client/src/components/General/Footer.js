@@ -18,15 +18,15 @@ const Footer = () => {
   return (
     <div className="footer">
       <div className="container">
-        <div className="footer-wrap">
+        <div className="footer-wrap row">
           {/* footer logo */}
-          <div className="footer-logo">
+          <div className="footer-logo col-lg-3 col-md-6">
             <img src={Image} alt="logo" className="footer-logo__image" />
             <p className="footer-logo__text">copyright@2020</p>
           </div>
 
           {/* footer nav */}
-          <nav className="footer-nav">
+          <nav className="footer-nav col-lg-3 col-md-6">
             <ul className="footer-nav__menu">
               <Link to="/">
                 <li>Home</li>
@@ -42,9 +42,8 @@ const Footer = () => {
               </Link>
             </ul>
           </nav>
-
           {/* <!-- footer contact --> */}
-          <div className="footer-contact">
+          <div className="footer-contact col-lg-3 col-md-6">
             <div className="footer-contact__info">
               <FontAwesomeIcon icon={faMapMarkedAlt} />
               <p>TP HCM. VIETNAM</p>
@@ -60,9 +59,8 @@ const Footer = () => {
               <p>+09. 123456789</p>
             </div>
           </div>
-
           {/* <!-- footer about --> */}
-          <div className="footer-about">
+          <div className="footer-about col-lg-3 col-md-6">
             <p>ABOUT THE COMPANY</p>
 
             <p>UncleFarm is a company for buying food and vegetable</p>

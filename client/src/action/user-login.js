@@ -4,7 +4,10 @@ export const usrLogin= (data)=>{
     return{
         type: USER_LOGIN,
         username:data.name,
-        id:data.id
+        id:data.id,
+        phonenum:data.phonenum,
+        address:data.address,
+        history:data.history
     }
 }
 export const usrLogout= ()=>{

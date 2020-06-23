@@ -1,7 +1,10 @@
 .hotList{
     display: flex;
     /* width: 100%; */
-    flex-direction: row;
+    margin: 30px;
+}
+.BrainhubCarouselItem li{
+    margin: 10px;
 }
 /* .hotList ul{
     width: 100%;

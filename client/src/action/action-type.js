@@ -9,3 +9,4 @@ export const FILTER_TYPE = 'FILTER_TYPE';
 export const PAGE_NUM ='PAGE_NUM';
 export const PAGE_RESET ='PAGE_RESET';
 export const SEARCH_FIELD = 'SEARCH_FIELD';
+export const Cookies='Cookies'

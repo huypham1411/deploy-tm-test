@@ -2,7 +2,7 @@
 
 /* Full-width input fields */
 .login-wrap input[type="text"],
-input[type="password"] {
+.login-wrap input[type="password"] {
   width: 100%;
   padding: 8px 15px;
   margin: auto;
@@ -22,6 +22,13 @@ input[type="password"] {
   justify-content: center;
   align-items: center;
   /* padding-left: 10px; */
+}
+.social{
+  flex-direction: column;
+  width: fit-content;
+  justify-content: center;
+  align-items: center;
+  padding-left: 10px;
 }
 
 .FB_login {
@@ -49,6 +56,7 @@ input[type="password"] {
   align-items: center;
   font-size: 10px;
 }
+
 
 button:hover {
   opacity: 0.8;
@@ -122,4 +130,12 @@ select:focus {
   padding-top: 20px;
   display: flex;
   justify-content: center;
+}
+
+@media only screen and (max-width: 768px) {
+  .modal-content {
+    position: absolute;
+    top: 100;
+    right: 0;
+  }
 }

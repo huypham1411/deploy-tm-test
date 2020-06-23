@@ -1,11 +1,11 @@
 .Forgot_pass input[type=email] {
-    width: 40%;
+    width: 50%;
     padding: 5px 10px;
     /* margin: auto; */
     /* display: inline-block; */
     border: 1px solid rgb(0, 0, 0);
     /* box-sizing: border-box; */
-    font-family: Fondamento;
+    /* font-family: Fondamento; */
     display: flex;
 }
 
@@ -18,12 +18,11 @@
     width: auto
 }
 .reset-btn {
-  justify-content: center;
-  justify-items: center;
-  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
 }
 .btn-reset {
-  font-family: Fondamento;
+  /* font-family: Fondamento; */
   border-radius: 20px;
   background-color:#B0EACD;
   background: #B0EACD;
@@ -35,7 +34,7 @@
   border: none;
   cursor: pointer;
   align-items: center;
-  width: 20%;
+  width: fit-content;
 }
 
 .forget-pass-text h1 {

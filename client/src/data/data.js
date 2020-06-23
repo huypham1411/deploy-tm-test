@@ -1,10 +1,16 @@
 import Axios from 'axios';
-
+import Cookies from 'universal-cookie'
+const cookies = new Cookies();
+console.log('localStorage --')
+const localStore = JSON.parse(localStorage.getItem('state')) || {}
+console.log(localStore)
 let data = {
-    items:[],
-    addedItems: [],
-    total: 0
+    items: localStore.items || [],
+    addedItems: localStore.addedItems || [],
+    total: localStore.total ? parseFloat(localStore.total) : 0
 }
+console.log('data');
+console.log(data)
 
 async function fetchData() {
     await Axios.get(`/products`)

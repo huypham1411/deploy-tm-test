@@ -4,16 +4,16 @@ import { NavLink } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import cart from "../../assets/cardIcon/cart.png";
 import { Link, useHistory } from "react-router-dom";
-// import { sortChoose, filterChoose } from "../../action/sort-action";
-// import { pageReset } from "../../action/paginate";
+import { sortChoose, filterChoose } from "../../action/sort-action";
+import { pageReset } from "../../action/paginate";
 import { searching } from "../../action/search-field";
 import Axios from "axios";
-// import Cart from "../General/Cart";
+//import Cart from "../General/Cart";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 
 const Nav = () => {
-  const [appear, setAppear] = useState(false);
+  // const [appear, setAppear] = useState(false);
   const history = useHistory();
   const dispatch = useDispatch();
   const [searchInput, setSearchInput] = useState("");
@@ -32,7 +32,7 @@ const Nav = () => {
   const getList = (e) => {
     if (e.key === "Enter") {
       const name = searchInput.toLowerCase();
-      Axios.get(`http://localhost:3030/products?name=${name}`)
+      Axios.get(`/products?name=${name}`)
         .then((data) => {
           const rSearchInput = name;
           dispatch(searching(rSearchInput, data.data));
@@ -61,40 +61,48 @@ const Nav = () => {
 
       <div className="collapse navbar-collapse" id="navbarTogglerDemo03">
         <ul className="navbar-nav">
-        <li className="nav-item">
-          <NavLink to="/" isActive={checkActive} activeStyle={styles}>
-            Home
-          </NavLink>
-        </li>
-        <li className="nav-item">
-          <NavLink to="/Products" activeStyle={styles}>
-            Our product
-          </NavLink>
-        </li>
-        <li className="nav-item">
-          <NavLink to="/Policy" activeStyle={styles}>
-            Policy
-          </NavLink>
-        </li>
-        <li className="nav-item">
-          <NavLink to="/About" activeStyle={styles}>
-            About us
-          </NavLink>
-        </li>
+          <li className="nav-item">
+            <NavLink to="/" isActive={checkActive} activeStyle={styles}>
+              Home
+            </NavLink>
+          </li>
+          <li className="nav-item">
+            <NavLink to="/Products" activeStyle={styles} onClick={()=>{dispatch(sortChoose('default'));dispatch(filterChoose('default'));dispatch(pageReset())}}>
+              Our product
+            </NavLink>
+          </li>
+          <li className="nav-item">
+            <NavLink to="/Policy" activeStyle={styles}>
+              Policy
+            </NavLink>
+          </li>
+          <li className="nav-item">
+            <NavLink to="/About" activeStyle={styles}>
+              About us
+            </NavLink>
+          </li>
         </ul>
       </div>
 
       <div id="searchBar">
-      <input type="search" id="searchInput" value={searchInput} onChange={(value)=>setSearchInput(value.target.value)} onKeyDown={e=>getList(e)}></input>
+        <input
+          type="search"
+          id="searchInput"
+          value={searchInput}
+          onChange={(value) => setSearchInput(value.target.value)}
+          onKeyDown={(e) => getList(e)}
+        ></input>
       </div>
       {/* <div className="img-container"><img src={cart} onClick={()=>{setAppear(!appear)}} alt="cart"></img></div>
             {appear&&<Cart/>}
         */}
-      <Link to="/cart">
+      
         <div className="img-container">
+        <Link to="/cart">
           <img src={cart} alt="cart"></img>
+          </Link>
         </div>
-      </Link>
+      
     </nav>
   );
 };

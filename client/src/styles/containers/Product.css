@@ -12,10 +12,24 @@
     display: flex;
     flex-direction: column;
     width: 100%;
+    margin-left: 10px;
 }
 .product-list{
     display: flex;
     flex-direction: row;
     width: 100%;
     height: 23%;
+}
+.sortProduct{
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    background-color: #B0EACD;
+    /* background-color: ; */
+}
+.filter-zone{
+    display: flex;
+    width: 20%;
+    height: fit-content;
+    background-color: #B0EACD;
 }

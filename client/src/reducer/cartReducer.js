@@ -2,6 +2,7 @@ import { ADD_TO_CART, REMOVE_ITEM, SUB_QUANTITY, ADD_QUANTITY } from '../action/
 import { data } from '../data/data'
 const cartReducer = (state = data, action) => {
     //INSIDE HOME COMPONENT
+    console.log(state)
 
     if (action.type === ADD_TO_CART) {
         //console.log(state)
@@ -10,10 +11,11 @@ const cartReducer = (state = data, action) => {
         //check if the action id exists in the addedItems
         let existed_item = state.addedItems.find(item => action.id === item.id)
         if (existed_item) {
-            addedItem.quantity += 1
+            existed_item.quantity += 1
+            state.total = Math.round((state.total + parseFloat(addedItem.price))*100)/100
+            localStorage.setItem('state', JSON.stringify(state));
             return {
-                ...state,
-                total: Math.round((state.total + parseFloat(addedItem.price))*100)/100
+                ...state
             }
         }
         else {
@@ -21,11 +23,11 @@ const cartReducer = (state = data, action) => {
             addedItem.quantity = action.quantity || 1;
             //calculating the total
             let newTotal = state.total + parseFloat(addedItem.price* addedItem.quantity)
-
+            state.addedItems = [...state.addedItems, addedItem]
+            state.total = Math.round(newTotal*100)/100
+            localStorage.setItem('state', JSON.stringify(state));
             return {
                 ...state,
-                addedItems: [...state.addedItems, addedItem],
-                total: Math.round(newTotal*100)/100
             }
 
         }
@@ -36,40 +38,43 @@ const cartReducer = (state = data, action) => {
 
         //calculating the total
         let newTotal = state.total - (parseFloat(itemToRemove.price) * parseFloat(itemToRemove.quantity))
+        state.addedItems = new_items
+        state.total = Math.round(newTotal*100)/100
+        localStorage.setItem('state', JSON.stringify(state));
         return {
             ...state,
-            addedItems: new_items,
-            total: Math.round(newTotal*100)/100
         }
     }
     //INSIDE CART COMPONENT
     if (action.type === ADD_QUANTITY) {
-        let addedItem = state.items.find(item => item.id === action.id)
+        let addedItem = state.addedItems.find(item => item.id === action.id)
         addedItem.quantity += 1
         let newTotal = state.total + parseFloat(addedItem.price)
-        return {
-            ...state,
-            total: Math.round(newTotal*100)/100
-        }
+        state.total = Math.round(newTotal*100)/100;
+        console.log('state--1')
+        localStorage.setItem('state', JSON.stringify(state));
+        return {...state}
     }
     if (action.type === SUB_QUANTITY) {
-        let addedItem = state.items.find(item => item.id === action.id)
+        let addedItem = state.addedItems.find(item => item.id === action.id)
         //if the qt == 0 then it should be removed
         if (addedItem.quantity === 1) {
             let new_items = state.addedItems.filter(item => item.id !== action.id)
             let newTotal = state.total - parseFloat(addedItem.price)
+            state.addedItems = new_items
+            state.total = Math.round(newTotal*100)/100
+            localStorage.setItem('state', JSON.stringify(state));
             return {
                 ...state,
-                addedItems: new_items,
-                total: Math.round(newTotal*100)/100
             }
         }
         else {
             addedItem.quantity -= 1
             let newTotal = state.total - parseFloat(addedItem.price)
+            state.total = Math.round(newTotal*100)/100
+            localStorage.setItem('state', JSON.stringify(state));
             return {
                 ...state,
-                total: Math.round(newTotal*100)/100
             }
         }
 

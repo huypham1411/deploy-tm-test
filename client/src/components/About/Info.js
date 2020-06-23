@@ -1,6 +1,7 @@
 import React from "react";
 import Image1 from "../../assets/aboutImage/imgInfo.jpeg";
 import "../../styles/components/About/info.css";
+
 const Info = () => {
   return (
     <div className="info">

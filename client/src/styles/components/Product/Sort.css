@@ -3,6 +3,5 @@
     flex-direction: row;
     width: auto;
     height: auto;
-    justify-content: flex-end;
-    background-color: #B0EACD;
+    /* justify-content: flex-end; */    
 }

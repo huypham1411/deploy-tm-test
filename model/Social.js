@@ -28,6 +28,10 @@ address:{
     required: true,
     max: 1024,
     min: 10
+},
+history:{
+    type:Array,
+    default:[]
 }
 })
 

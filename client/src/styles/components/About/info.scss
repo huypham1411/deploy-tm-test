@@ -1,5 +1,5 @@
 .info {
-  font-family: 'Lobster', cursive;
+  font-family: "Lobster", cursive;
 }
 //test
 
@@ -12,23 +12,21 @@
 
 .info-text {
   &__wrap {
-  
   }
 
-  h3{
+  h3 {
     margin-top: 40px;
   }
 
-  p{
+  p {
     margin-top: 16px;
     padding-left: 30px;
   }
 }
 
 //image
-.info-image{
-  
-  img{
+.info-image {
+  img {
     border-radius: 10px;
   }
 }

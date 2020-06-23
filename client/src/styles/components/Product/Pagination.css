@@ -11,3 +11,7 @@
     color: white;
 }
 .pagination a:hover:not(.active) {background-color: #ddd;}
+.Pactive {
+    color: red;
+
+}

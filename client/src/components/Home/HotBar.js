@@ -8,7 +8,7 @@ const HotBar=()=>{
                 <h1>HOT!!!</h1>
             </div>
             <div className="watchmore">
-                <p><NavLink to='/Products/'>Xem thêm</NavLink></p>
+                <p><NavLink to='/Products/'>More</NavLink></p>
             </div>
         </div>
     );
