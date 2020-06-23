@@ -42,7 +42,7 @@ const SignUp = (props) => {
       return;
     }
     axios
-      .post("https://uncle-veggies.herokuapp.com/SignUp", {
+      .post("http://localhost:3030/SignUp", {
         name,
         email,
         password,

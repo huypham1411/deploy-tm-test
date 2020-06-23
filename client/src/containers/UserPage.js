@@ -1,16 +1,16 @@
 import React, {useState, useEffect }  from 'react';
 import "../styles/components/SignUp/SignUp.css";
-import {useSelector} from 'react-redux';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faMapMarkedAlt,
-  faEnvelope,
-  faKey,
-  faPhoneAlt,
-  faUser,
-  faPhone,
-  faLocationArrow
-} from "@fortawesome/free-solid-svg-icons";
+// import {useSelector} from 'react-redux';
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import {
+//   faMapMarkedAlt,
+//   faEnvelope,
+//   faKey,
+//   faPhoneAlt,
+//   faUser,
+//   faPhone,
+//   faLocationArrow
+// } from "@fortawesome/free-solid-svg-icons";
 import axios from 'axios';
 
 class UserPage extends React.Component {
@@ -49,7 +49,7 @@ class UserPage extends React.Component {
     }
 
     update() {
-        const url = 'https://uncle-veggies.herokuapp.com/user/' + this.state.id
+        const url = 'http://localhost:3030/user/' + this.state.id
         axios.put(url, {
             name : this.state.name,
             email : this.state.email,

@@ -18,7 +18,7 @@ const Form =()=>{
     const loginFunciton=()=>{
         //e.preventDefault();
     
-    axios.post('https://uncle-veggies.herokuapp.com/login',{role, data : {email, password}})
+    axios.post('http://localhost:3030/login',{role, data : {email, password}})
         .then((data)=>{
         //console.log(data.data)
         localStorage.setItem('auth-token',data.headers['auth-token'])
@@ -47,7 +47,7 @@ const Form =()=>{
                 role: 'facebook',
             }
 
-            axios.post('https://uncle-veggies.herokuapp.com/social', data)
+            axios.post('http://localhost:3030/social', data)
             .then(res2 => {
                 if (res2.data.status == 'success') {
                     alert('success')
@@ -61,7 +61,7 @@ const Form =()=>{
             })
         })
 
-        axios.post('https://uncle-veggies.herokuapp.com/login',{id : response.userID })
+        axios.post('http://localhost:3030/login',{id : response.userID })
         .then((data)=>{
         localStorage.setItem('auth-token',data.headers['auth-token'])
         alert('Login success')
@@ -86,7 +86,7 @@ const Form =()=>{
             role: 'gmail'
         }
 
-        axios.post('https://uncle-veggies.herokuapp.com/social', (data))
+        axios.post('http://localhost:3030/social', (data))
         .then(res => {
             if (res.data.status == 'success') {
                 alert('Post Social success')
@@ -95,7 +95,7 @@ const Form =()=>{
             }
         })
 
-        axios.post('https://uncle-veggies.herokuapp.com/login',{id : response.Ea })
+        axios.post('http://localhost:3030/login',{id : response.Ea })
         .then((data)=>{
         localStorage.setItem('auth-token',data.headers['auth-token'])
         alert('Login success')

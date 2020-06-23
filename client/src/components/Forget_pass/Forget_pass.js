@@ -6,7 +6,7 @@ const Forget_pass = () => {
     const [send,setSend]=useState(false);
     const getPass = async()=>{
         setSend(true);
-        await Axios.post('https://uncle-veggies.herokuapp.com/forgetpassword',{email:email})
+        await Axios.post('http://localhost:3030/forgetpassword',{email:email})
         .then(data=>{
             setSend(false)
             setEmail('')
