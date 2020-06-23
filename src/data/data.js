@@ -1,6 +1,6 @@
 import Axios from 'axios';
-import Cookies from 'universal-cookie'
-const cookies = new Cookies();
+// import Cookies from 'universal-cookie'
+// const cookies = new Cookies();
 console.log('localStorage --')
 const localStore = JSON.parse(localStorage.getItem('state')) || {}
 console.log(localStore)

@@ -1,7 +1,7 @@
-import { Cookies} from '../action/action-type'
-const intialState={
-	cookies:'',
-}
+// import { Cookies} from '../action/action-type'
+// const intialState={
+// 	cookies:'',
+// }
 const loginReducer =(state=intialState,action={})=>{
 	switch(action.type){
 	case USER_LOGIN:
