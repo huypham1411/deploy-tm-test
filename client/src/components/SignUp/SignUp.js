@@ -42,7 +42,7 @@ const SignUp = (props) => {
       return;
     }
     axios
-      .post("http://localhost:3030/SignUp", {
+      .post("/SignUp", {
         name,
         email,
         password,

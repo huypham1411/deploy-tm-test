@@ -27,7 +27,7 @@ class Total extends Component{
             paymentData:data
         }
         const token = localStorage.getItem('auth-token');
-        Axios.post('http://localhost:3030/payment',variables,{headers:{"auth-token":token}}).then(data=>
+        Axios.post('/payment',variables,{headers:{"auth-token":token}}).then(data=>
        { if(data.data.success){
             alert("Buy success!!");
             this.props.addedItems.forEach(element => {
