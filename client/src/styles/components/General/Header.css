@@ -9,16 +9,15 @@ width: 100%;
 flex-wrap: wrap;
 }
 
-
-.usr-name{
+/* .usr-name{
     display: flex;
     justify-content: center;
     align-items: center;
-}
+} */
 
-.usr-name p{
+/* .usr-name p{
     margin-bottom: 0px;
-}
+} */
 
 .iconImg{
     display: flex;

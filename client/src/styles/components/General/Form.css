@@ -1,7 +1,7 @@
 /* body {font-family: Arial, Helvetica, sans-serif;} */
 
 /* Full-width input fields */
-.login-wrap input[type="text"],
+/* .login-wrap input[type="text"],
 .login-wrap input[type="password"] {
   width: 100%;
   padding: 8px 15px;
@@ -11,11 +11,11 @@
   box-sizing: border-box;
   font-family: Fondamento;
   border-radius: 25px;
-}
+} */
 
-.headerForm {
+/* .headerForm {
   margin: 20px;
-}
+} */
 .social {
   flex-direction: column;
   width: fit-content;
@@ -23,55 +23,55 @@
   align-items: center;
   /* padding-left: 10px; */
 }
-.social{
+/* .social{
   flex-direction: column;
   width: fit-content;
   justify-content: center;
   align-items: center;
   padding-left: 10px;
-}
+} */
 
-.FB_login {
+/* .FB_login {
   display: flex;
   width: auto;
   height: auto;
-}
-.FB_login button {
+} */
+/* .FB_login button {
   width: 200px;
   height: 60px;
   justify-content: center;
   align-items: center;
   align-self: center;
   font-size: 10px;
-}
-.GG_login {
+} */
+/* .GG_login {
   display: flex;
   width: max-content;
   height: auto;
-}
-.GG_login button {
+} */
+/* .GG_login button {
   width: 200px;
   height: 60px;
   justify-content: center;
   align-items: center;
   font-size: 10px;
-}
+} */
 
 
-button:hover {
+/* button:hover {
   opacity: 0.8;
-}
+} */
 
-.headerForm h2 {
+/* .headerForm h2 {
   font-family: Fondamento;
   display: inline;
-}
+} */
 
-.logo {
+/* .logo {
   width: 30%;
-}
+} */
 
-.forget {
+/* .forget {
   font-family: Fondamento;
   text-align: center;
   margin-bottom: 5px;
@@ -81,8 +81,8 @@ button:hover {
   color: black;
   cursor: pointer;
   text-decoration: underline;
-}
-
+} */
+/* 
 input:focus,
 textarea:focus,
 select:focus {
@@ -100,9 +100,9 @@ select:focus {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
   z-index: 100;
-}
+} */
 
-.animate {
+/* .animate {
   -webkit-animation: animatezoom 0.6s;
   animation: animatezoom 0.6s;
 }
@@ -138,4 +138,4 @@ select:focus {
     top: 100;
     right: 0;
   }
-}
+} */
