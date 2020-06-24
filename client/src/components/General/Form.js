@@ -8,7 +8,7 @@ import {useDispatch} from 'react-redux';
 import {usrLogin} from '../../action/user-login'
 import FacebookLogin from 'react-facebook-login';
 import GoogleLogin from 'react-google-login';
-
+import Swal from 'sweetalert2';
 const Form =()=>{
     const [email,setEmail]=useState('');
     //const [address,setAddress]=useState('ahihu');
@@ -22,14 +22,26 @@ const Form =()=>{
         .then((data)=>{
         //console.log(data.data)
         localStorage.setItem('auth-token',data.headers['auth-token'])
-        alert('Login success')
+        Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: 'Login success',
+            showConfirmButton: false,
+            timer: 1500
+          })
         return dispatch(usrLogin(data.data))})
         .catch(err=>{
             console.log(err)
             const e=err.response.data;
             let s='';
             for(let i of e){s+=i.message;}
-                alert(s);
+            Swal.fire({
+                position: 'center',
+                icon: 'error',
+                title: s,
+                showConfirmButton: false,
+                timer: 2000
+              })
         });
     }
 
@@ -50,13 +62,25 @@ const Form =()=>{
             axios.post('/social', data)
             .then(res2 => {
                 if (res2.data.status == 'success') {
-                    alert('success')
+                    Swal.fire({
+                        position: 'center',
+                        icon: 'success',
+                        title: 'Login success',
+                        showConfirmButton: false,
+                        timer: 2000
+                      })
                     const data2 = {
                         name: data.name,
                         id: data.id
                     }
                 } else {
-                    alert(res2.data.message)
+                    Swal.fire({
+                        position: 'center',
+                        icon: 'error',
+                        title: res2.data.message,
+                        showConfirmButton: false,
+                        timer: 2000
+                      })
                 }
             })
         })
@@ -64,14 +88,26 @@ const Form =()=>{
         axios.post('/login',{id : response.userID })
         .then((data)=>{
         localStorage.setItem('auth-token',data.headers['auth-token'])
-        alert('Login success')
+        Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: 'Login success',
+            showConfirmButton: false,
+            timer: 2000
+          })
         return dispatch(usrLogin(data.data))})
         .catch(err=>{
             console.log(err)
             const e=err.response.data;
             let s='';
             for(let i of e){s+=i.message;}
-                alert(s);
+            Swal.fire({
+                position: 'center',
+                icon: 'error',
+                title: s,
+                showConfirmButton: false,
+                timer: 2000
+              })
         });
     }
 
@@ -89,23 +125,47 @@ const Form =()=>{
         axios.post('/social', (data))
         .then(res => {
             if (res.data.status == 'success') {
-                alert('Post Social success')
+                Swal.fire({
+                    position: 'center',
+                    icon: 'success',
+                    title: 'Success',
+                    showConfirmButton: false,
+                    timer: 2000
+                  })
             } else {
-                alert(res.data.message)
+                Swal.fire({
+                    position: 'center',
+                    icon: 'error',
+                    title: res.data.message,
+                    showConfirmButton: false,
+                    timer: 2000
+                  })
             }
         })
 
         axios.post('/login',{id : response.Ea })
         .then((data)=>{
         localStorage.setItem('auth-token',data.headers['auth-token'])
-        alert('Login success')
+        Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: 'Login success',
+            showConfirmButton: false,
+            timer: 2000
+          })
         return dispatch(usrLogin(data.data))})
         .catch(err=>{
             console.log(err)
             const e=err.response.data;
             let s='';
             for(let i of e){s+=i.message;}
-                alert(s);
+            Swal.fire({
+                position: 'center',
+                icon: 'error',
+                title: s,
+                showConfirmButton: false,
+                timer: 2000
+              })
         });
     }
 

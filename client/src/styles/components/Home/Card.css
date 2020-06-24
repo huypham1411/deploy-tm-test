@@ -16,7 +16,9 @@
     width: 200px;
     height: 200px;
 }
-
+.productImg img{
+    width: 100%;
+}
 .productName{
     overflow: hidden;
     text-overflow: ellipsis;

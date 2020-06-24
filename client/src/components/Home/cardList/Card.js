@@ -1,6 +1,7 @@
 import React,{Component} from 'react';
 import '../../../styles/components/Home/Card.css';
 import { Link } from 'react-router-dom';
+import Swal from 'sweetalert2';
 class Card extends Component{
     render() {
         // console.log(this.props)
@@ -20,7 +21,13 @@ class Card extends Component{
                 <Link>
                     <img src="https://img.icons8.com/bubbles/50/000000/buy.png" alt="cart-icon"  onClick={()=>{
                         this.props.handleClick(this.props.id)
-                        alert(`you add ${this.props.productName} to cart`)
+                        Swal.fire({
+                            position: 'center',
+                            icon: 'success',
+                            title: `You have added ${this.props.productName} to cart`,
+                            showConfirmButton: false,
+                            timer: 1500
+                          })
                     }}/>
                 </Link>
                 </div>

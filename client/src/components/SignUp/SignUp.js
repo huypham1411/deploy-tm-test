@@ -4,6 +4,7 @@ import {Link} from 'react-router-dom';
 import bg_signup from "../../assets/tomato-transparent-18.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useHistory } from "react-router-dom";
+import Swal from 'sweetalert2';
 import {
   faFacebookSquare,
   faInstagramSquare,
@@ -34,11 +35,19 @@ const SignUp = (props) => {
   const [check2, setCheck2] = useState(false);
   const signUpFunction = () => {
     if (!check) {
-      alert("Please accept the term of Use & Privacy Policy");
+      Swal.fire({
+        icon: 'warning',
+        title: 'Oops...',
+        text: "Please accept the term of Use & Privacy Policy",
+      });
       return;
     }
     if (!checkPass()) {
-      alert("Password and confirm password not match!");
+      Swal.fire({
+        icon: 'warning',
+        title: 'Oops...',
+        text: "Password and confirm password not match!",
+      })
       return;
     }
     axios
@@ -50,7 +59,11 @@ const SignUp = (props) => {
         phonenum,
       })
       .then((user) => {
-        alert(`Sign up success`);
+        Swal.fire({
+          icon: 'success',
+          title: 'Success!',
+          text: 'Sign up success!',
+        })
         setName("");
         setEmail("");
         setPassword("");
@@ -66,7 +79,11 @@ const SignUp = (props) => {
         for (let i of e) {
           s += i.message;
         }
-        alert(s);
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: s,
+        })
       });
   };
 

@@ -45,7 +45,6 @@
   height: auto;
   width: 70%;
 
-  z-index: -1;
   /* width: 100%; */
 }
 .bg-image {
@@ -80,7 +79,6 @@
   width: 30%;
   height: fit-content;
 
-  z-index: -1;
 }
 .signup_box h4 {
   color: #b7b7b7;

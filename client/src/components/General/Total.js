@@ -4,6 +4,7 @@ import '../../styles/components/General/Cart.css'
 import { removeItem} from '../../action/cart-action';
 import Paypal from './Paypal';
 import Axios from 'axios';
+import Swal from 'sweetalert2';
 class Total extends Component{
     constructor(props){
         super(props);
@@ -13,7 +14,8 @@ class Total extends Component{
     }
     checkLogin(){
         const lg=localStorage.getItem('auth-token')
-        if(!lg){alert("Bạn chưa đăng nhập. Vui lòng đăng nhập để tiếp tục");return;}
+        if(!lg){ 
+            Swal.fire("Oops! You haven't sign in yet", "Please log in to continue","warning");return;}
         else
         {
             this.setState({appear:!this.state.appear})
@@ -29,14 +31,26 @@ class Total extends Component{
         const token = localStorage.getItem('auth-token');
         Axios.post('/payment',variables,{headers:{"auth-token":token}}).then(data=>
        { if(data.data.success){
-            alert("Buy success!!");
+        Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: 'Buy success!!!',
+            showConfirmButton: false,
+            timer: 1500
+          })
             this.props.addedItems.forEach(element => {
                 this.props.removeItem(element.id)
             });
             return;
         }
         else 
-        alert('Buy fail...')
+        Swal.fire({
+            position: 'center',
+            icon: 'error',
+            title: 'Buy fail...',
+            showConfirmButton: false,
+            timer: 1500
+          })
         }
         )
     }

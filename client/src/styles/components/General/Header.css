@@ -9,11 +9,12 @@ width: 100%;
 flex-wrap: wrap;
 }
 
+
 .usr-name{
     display: flex;
     justify-content: center;
     align-items: center;
-} 
+}
 
 .usr-name p{
     margin-bottom: 0px;

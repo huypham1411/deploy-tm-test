@@ -1,16 +1,37 @@
 import React,{useState} from 'react';
 import "../../styles/components/ForgetPass/textForgetpass.css";
 import Axios from 'axios';
+import Swal from 'sweetalert2';
 const Forget_pass = () => {
     const [email,setEmail]=useState('');
     const [send,setSend]=useState(false);
+    //const [alert,setAlert]=useState()
     const getPass = async()=>{
         setSend(true);
         await Axios.post('/forgetpassword',{email:email})
         .then(data=>{
             setSend(false)
             setEmail('')
-            alert('Send '+data.data.msg)})
+            if(data.data.msg==='success'){
+                Swal.fire({
+                    position: 'center',
+                    icon: 'success',
+                    title: 'Send success',
+                    showConfirmButton: false,
+                    timer: 1500
+                  })
+            }
+            else
+            {
+                Swal.fire({
+                    position: 'center',
+                    icon: 'error',
+                    title: 'Send fail',
+                    showConfirmButton: false,
+                    timer: 1500
+                  })
+            }
+        })
     }
     return (
         send?<p>Now sending...</p>:
