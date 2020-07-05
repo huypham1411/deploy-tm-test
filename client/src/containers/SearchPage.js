@@ -5,6 +5,7 @@ import Card from '../components/Home/cardList/Card';
 import {connect} from 'react-redux';
 import { addToCart } from '../action/cart-action';
 import '../styles/containers/SearchPage.css';
+import '../styles/components/Home/Cardlist.css';
 const SearchPage =(props)=>{
     const searchInput=useSelector(state=>{
         return state.searchReducer.name});
@@ -13,19 +14,14 @@ const SearchPage =(props)=>{
         }
     const searchResult=useSelector(state=>state.searchReducer.data);
         return (<div className="SearchPage">
-            <div style={{marginBottom:'10px'}}>
+            <div className="searchText">
                 <p>Search Result:{searchInput}</p>
                 <hr></hr>
             </div>
             <div className="searchResult">
             {
             searchResult.map(item=>{
-            //     return <div>
-            // <p>{item._id}</p>
-            // <p>{item.name}</p>
-            // <p>{item.price}</p>
-            // </div>
-            return <div className="card-container" key={item.id}>
+            return <div className="card-container col-lg-4 col-md-6 col-sm-6" key={item.id}>
             <Link to={`/Products/${item._id}`}>
               <Card
                 key={item._id}
@@ -39,7 +35,7 @@ const SearchPage =(props)=>{
             </div>
             })
             }
-            </div>
+          </div>
         </div>
         );
     }

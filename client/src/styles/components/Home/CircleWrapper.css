@@ -1,5 +1,22 @@
-.circle-wrapper{
+.circle-wrapper {
+    padding: 68px 0 60px;
     display: flex;
+    flex-direction: row;
     justify-content: space-around;
-    margin-top: -150px;
+    width: 100%;
+    max-width: 100%;
+}
+.text-cate{
+    text-align: center;
+    font-family: 'Lobster';
+}
+@media only screen and (max-width: 991px) and (min-width: 768px){
+    .circle-wrapper {
+        padding: 68px 0 37px;
+    }
+}
+@media only screen and (max-width: 767px){
+    .circle-wrapper {
+        padding: 58px 0 24px;
+    }
 }

@@ -20,6 +20,7 @@ const Nav = () => {
   const styles = {
     borderRadius: 10,
     backgroundColor: "#00DD75",
+    color:"#fff"
   };
   //https://stackoverflow.com/questions/47879663/root-navlink-always-get-active-class-react-router-dom
   const checkActive = (match, location) => {
@@ -32,7 +33,7 @@ const Nav = () => {
   const getList = (e) => {
     if (e.key === "Enter") {
       const name = searchInput.toLowerCase();
-      Axios.get(`/products?name=${name}`)
+      Axios.get(`http://localhost:3030/products?name=${name}`)
         .then((data) => {
           const rSearchInput = name;
           dispatch(searching(rSearchInput, data.data));

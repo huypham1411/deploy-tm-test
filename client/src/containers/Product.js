@@ -15,11 +15,12 @@ class Product extends React.Component {
         return (
             <div className="product">
                 <ProductImg />
-                <div className="product-shop">
-                    <div className="filter-zone">
+                <div className="product-shop ">
+                <div className="row">
+                    <div className="filter-zone col-lg-3 col-md-12">
                         <ProductList />
                     </div>
-                    <div className="product-main">
+                    <div className="product-main col-lg-9 col-md-12">
                         <div className="sortProduct">
                             <Sort />
                         </div>
@@ -27,6 +28,7 @@ class Product extends React.Component {
                             <CardList/>
                         </div>
                     </div>
+                </div>
                 </div>
             </div>
         );

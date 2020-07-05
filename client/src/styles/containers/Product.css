@@ -3,33 +3,36 @@
     justify-content: center;
     flex-direction: column;
     width: 100%;
+    flex-wrap: wrap;
 }
 .product-shop{
-    display: flex;
-    flex-direction: row;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
 }
 .product-main{
     display: flex;
     flex-direction: column;
-    width: 100%;
-    margin-left: 10px;
+    /* width: 80%; */
 }
 .product-list{
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    height: 23%;
+    max-width: 100%;
 }
 .sortProduct{
     display: flex;
-    width: 100%;
-    justify-content: flex-end;
-    background-color: #B0EACD;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #ddd;
+    padding: 8px 10px;
+    margin: 0 0 30px;
     /* background-color: ; */
 }
 .filter-zone{
-    display: flex;
-    width: 20%;
-    height: fit-content;
-    background-color: #B0EACD;
+    display: block;
+    /* justify-content: center;
+    text-align: center; */
+    /* width: 20%; */
+    /* background-color: #B0EACD; */
 }

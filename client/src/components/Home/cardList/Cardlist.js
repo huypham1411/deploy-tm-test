@@ -2,13 +2,12 @@ import React from "react";
 import "../../../styles/components/Home/Cardlist.css";
 import Card from "../cardList/Card";
 // import { data } from '../../../data/data';
-import { Link } from "react-router-dom";
 import { addToCart } from "../../../action/cart-action";
 import { connect } from "react-redux";
 import Axios from "axios";
 import Pagination from "../../Product/Pagination/Pagination";
 //use this in product page :v
-class Cardlist extends React.Component {
+class Cardlist extends React.PureComponent {
   constructor(props) {
     super(props);
     this.handleClick = this.handleClick.bind(this);
@@ -22,14 +21,14 @@ class Cardlist extends React.Component {
   async componentDidMount() {
     let link = "";
     if (this.props.route) {
-      link = `/products${
+      link = `http://localhost:3030/products${
         this.props.route === "/"
           ? `?page=${this.props.number}`
           : `${this.props.route}&page=${this.props.number}`
       }`;
     }
     if (this.props.filter) {
-      link = `/products${
+      link = `http://localhost:3030/products${
         this.props.filter === "/"
           ? `?page=${this.props.number}`
           : `?${this.props.filter}&page=${this.props.number}`
@@ -41,14 +40,14 @@ class Cardlist extends React.Component {
       this.props.route !== "/" &&
       this.props.filter !== "/"
     ) {
-      link = `/products${
+      link = `http://localhost:3030/products${
         this.props.route === "/" || this.props.filter === "/"
           ? `?page=${this.props.number}`
           : `${this.props.route}&page=${this.props.number}&${this.props.filter}`
       }`;
     }
     if (this.props.route === "/" && this.props.filter === "/") {
-      link = `/products?page=${this.props.number}`;
+      link = `http://localhost:3030/products?page=${this.props.number}`;
     }
     do {
       // console.log('num',this.props.number)
@@ -63,6 +62,7 @@ class Cardlist extends React.Component {
   }
 
   async componentDidUpdate(prevProps, prevState) {
+    // console.log(`http://localhost:3030/products${this.props.route==='/'?`?page=${this.props.number}`:`${this.props.route}&page=${this.props.number}`}`)
     if (
       prevProps.filter !== this.props.filter ||
       prevProps.route !== this.props.route ||
@@ -70,14 +70,14 @@ class Cardlist extends React.Component {
     ) {
       let link = "";
       if (this.props.route && this.props.filter === "/") {
-        link = `/products${
+        link = `http://localhost:3030/products${
           this.props.route === "/"
             ? `?page=${this.props.number}`
             : `${this.props.route}&page=${this.props.number}`
         }`;
       }
       if (this.props.filter && this.props.route === "/") {
-        link = `/products?${
+        link = `http://localhost:3030/products?${
           this.props.filter === "/"
             ? `?page=${this.props.number}`
             : `${this.props.filter}&page=${this.props.number}`
@@ -89,10 +89,10 @@ class Cardlist extends React.Component {
         this.props.route !== "/" &&
         this.props.filter !== "/"
       ) {
-        link = `/products${this.props.route}&page=${this.props.number}&${this.props.filter}`;
+        link = `http://localhost:3030/products${this.props.route}&page=${this.props.number}&${this.props.filter}`;
       }
       if (this.props.route === "/" && this.props.filter === "/") {
-        link = `/products?page=${this.props.number}`;
+        link = `http://localhost:3030/products?page=${this.props.number}`;
       }
 
       do {
@@ -109,28 +109,23 @@ class Cardlist extends React.Component {
       } while (this.state.productsData.length === 0);
     }
   }
+
   handleClick(id) {
     this.props.addToCart(id);
   }
   render() {
     const listCard = this.state.productsData.map((item) => (
       <div className="card-container col-lg-4 col-md-6 col-sm-6" key={item.id}>
-        <Link to={`/Products/${item._id}`}>
           <Card
             key={item._id}
             img={item.img}
             price={Math.round(item.price * 100) / 100}
             productName={item.name}
-            id={item.id}
+            id={item._id}
             handleClick={this.handleClick}
           />
-        </Link>
-        {/* <Pagination
-
-        /> */}
       </div>
     ));
-    //console.log(this.state.maxPage);
     return (
       <div className="cardlist-wrapper">
         <div className="cardlist-container row ">{listCard}</div>

@@ -1,7 +1,7 @@
 import React from 'react';
 import '../../styles/components/Product/QuantitiesButton.css';
 
-class QuantitiesButton extends React.Component {
+class QuantitiesButton extends React.PureComponent {
   // constructor(props) {
   //   super(props);
   //   this.state = {
@@ -52,9 +52,9 @@ class QuantitiesButton extends React.Component {
   render() {
     return (
       <div className='quantitiesBtn'>
-        <button onClick={this.DecreaseItem}> - </button>
+        <button className="decrease-item" onClick={this.DecreaseItem}> - </button>
         <input className="inputne" value={this.props.quantity} />
-        <button onClick={this.IncrementItem}> + </button>
+        <button className="increase-item" onClick={this.IncrementItem}> + </button>
       </div>
     );
   }

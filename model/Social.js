@@ -6,15 +6,17 @@ id:{
 },
 name:{
     type:String,
-    required:true,
     min:2,
     max:255
 },
 email:{
     type:String,
-    required:true,
     max:255,
     min:6
+},
+phonenum:{
+    type: Number,
+    min:7
 },
 avatar:{
     type:String
@@ -25,7 +27,6 @@ role: {
 },
 address:{
     type: String,
-    required: true,
     max: 1024,
     min: 10
 },

@@ -86,4 +86,8 @@
 .footer-about__icon li {
   font-size: 40px;
 }
+
+.footer .container li{
+  list-style: none;
+}
 /*# sourceMappingURL=Footer.css.map */

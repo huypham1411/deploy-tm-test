@@ -1,12 +1,10 @@
 {
   "name": "server",
   "version": "1.0.0",
-  "description": "test deploy react app",
+  "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon index.js",
-    "heroku-postbuild": "cd client && npm install && npm run build"
+    "start": "nodemon index.js"
   },
   "author": "",
   "license": "ISC",
@@ -23,14 +21,5 @@
     "nodemailer": "^6.4.8",
     "nodemon": "^2.0.3",
     "password-generator": "^2.3.2"
-  },
-  "devDependencies": {},
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/huypham1411/deploy-tm-test.git"
-  },
-  "bugs": {
-    "url": "https://github.com/huypham1411/deploy-tm-test/issues"
-  },
-  "homepage": "https://github.com/huypham1411/deploy-tm-test#readme"
+  }
 }

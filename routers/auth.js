@@ -55,9 +55,15 @@ router.post('/login',async (req,res)=>{
       res.header('auth-token',token).status(201).send({name:user.name, id:user._id})
    } else {
       const user=await Social.findOne({id:req.body.id})
-      console.log(user)
-      const token=jwt.sign({name:user.name,id:user._id,email:user.email,address:user.address,phonenum:user.phonenum,history:user.history},process.env.TOKEN_SECRET)
-      res.header('auth-token',token).status(201).send({name:user.name, id:user._id})
+      .then(data=> 
+         {
+            //console.log(data,'data')
+            const token=jwt.sign({name:data.name,role:data.role,id:data._id,email:data.email,address:data.address,phonenum:data.phonenum,history:data.history},process.env.TOKEN_SECRET)
+             res.header('auth-token',token).status(201).send({name:data.name, id:data._id})
+            })
+      .catch(err=>console.log(err))
+     
+      
    }
 })
 
@@ -70,7 +76,7 @@ router.get('/login',async(req,res)=>{
 
 router.post('/social',async (req,res)=>{
    const userExist=await Social.find({id:req.body.id})
-   if(userExist){return res.status(400).json({message:'Account exist'})}
+   if(userExist.length!==0){return res.json({message:'Account exist'})}
    const social=new Social({
       id: req.body.id,
       name:req.body.name,
@@ -79,6 +85,7 @@ router.post('/social',async (req,res)=>{
       avatar:req.body.avatar,
       role:req.body.role
    })
+   //console.log(social)
    try {
       const saveSocial=await social.save();
       res.send({
@@ -106,8 +113,7 @@ router.get('/user',async (req,res)=>{
 
 router.get('/user/:id',async (req,res)=>{
    try{
-      user= await Social.findOne({id:req.params.id})
-
+      user= await Social.findOne({_id:req.params.id})
       if (!user) {
          user= await User.findOne({_id:req.params.id})
       }
@@ -116,6 +122,33 @@ router.get('/user/:id',async (req,res)=>{
    }
    catch(err){res.status(404).send(err)}
  })
+
+ router.delete('/user',async (req,res)=>{
+   try{
+      user= await Social.findOne({_id:req.body.id})
+      if (!user) {
+         User.findByIdAndDelete({_id:req.body.id}, (err, result) => {
+            if (err) return res.send(500, err)
+            console.log('got deleted');
+            return res.status(200).json({
+               status : 'success',
+               user : 'signup'
+            });
+            });
+      } else {
+         Social.findByIdAndDelete({_id:req.body.id}, (err, result) => {
+            if (err) return res.send(500, err)
+            console.log('got deleted');
+            return res.status(200).json({
+               status : 'success',
+               user : 'social'
+            });
+            });
+      }
+   }
+   catch(err){res.status(404).send(err)}
+ })
+
 
  router.post('/payment',verify,(req,res)=>{
    // console.log(req.body);
@@ -135,7 +168,6 @@ router.get('/user/:id',async (req,res)=>{
    })
    //Put payment information into paypal collection
    let user=jwt.decode(req.header("auth-token"));
-   //console.log(user)
    transactionData.user={
       id:user.id,
       name:user.name,
@@ -143,8 +175,9 @@ router.get('/user/:id',async (req,res)=>{
    }
    transactionData.data=req.body.paymentData;
    transactionData.product=history;
-   user2= Social.findOne({_id:user.id})
-   if (user2) {
+
+   if (user.role) {
+      console.log('social')
       Social.findOneAndUpdate({_id:user.id},{$push:{history:history}},{new:true},(err,user)=>{if(err) return res.json({success:false,err});
       const payment=new Payment(transactionData)
       payment.save((err,doc)=>{
@@ -157,6 +190,7 @@ router.get('/user/:id',async (req,res)=>{
       })
       })
    } else {
+      console.log('web')
       User.findOneAndUpdate({_id:user.id},{$push:{history:history}},{new:true},(err,user)=>{if(err) return res.json({success:false,err});
       const payment=new Payment(transactionData)
       payment.save((err,doc)=>{
@@ -171,9 +205,33 @@ router.get('/user/:id',async (req,res)=>{
    }
 })
 
+router.post('/user/checkpass',async (req,res)=>{
+   const user=await User.findOne({_id:req.body.id})
+
+   const validPassword=await bcrypt.compare(req.body.password,user.password);
+   if(!validPassword){return res.status(400).send([{'message':'Password is wrong!'}])}
+
+   res.json({status: 'success'})
+})
+
+router.post('/user/changepass',async (req,res)=>{
+   const user=await User.findOne({_id:req.body.id})
+
+   const salt = await bcrypt.genSalt(10);
+   const hashPassword= await bcrypt.hash(req.body.password,salt);
+
+   user.password = hashPassword;
+   user.save(function (err) {
+      if (err) return res.json(err);
+      res.json({
+         status: 'success',
+      })
+   })
+})
+
 
  router.put('/user/:id',async (req,res)=>{
-   user= await Social.findOne({id:req.params.id})
+   user= await Social.findOne({_id :req.params.id })
 
    if (!user) {
       user= await User.findOne({_id:req.params.id})
@@ -188,13 +246,13 @@ router.get('/user/:id',async (req,res)=>{
    if (typeof req.body.phonenum !== 'undefined') {
       user.phonenum = req.body.phonenum;
    }
-   // if (typeof req.body.phonenum !== 'undefined') {
-   //    user.phonenum = req.body.phonenum;
-   // }
+   if (req.body.avatar) {
+      user.avatar = req.body.avatar;
+   }
    user.save(function (err) {
       if (err) return res.json(err);
       res.json({
-         status: 'succes',
+         status: 'success',
          data: user
       })
    })

@@ -1,0 +1,19 @@
+.change_pass {
+    margin-left: 20%;
+    margin-top: 30px;
+}
+
+.change_pass input[type="password"] {
+  width: 30%;
+  display: block;
+  border: 2px solid black;
+  background-color: white;
+  border-radius: 5px;
+  padding-left: 10px;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  font-family: Poppins;
+  box-sizing: border-box; }
+  input:focus {
+    border: 4px solid green; 
+  }

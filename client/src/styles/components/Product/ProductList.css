@@ -1,31 +1,40 @@
-.Product-list{
-    display: flex;
-    list-style: none;
-    flex-direction: column;
-    width: auto;
-    /* max-width: 100%; */
-    height: auto;
-    max-height: max-content;
-    /* margin-right: 30px; */
-    background-color: #B0EACD;  
-    margin-bottom: 0px;  
+.widget_list{
+    display: block;
+    max-width: 100%;
+    text-decoration: none;
+    flex-wrap: wrap;
 }
-/* .Product-list li{
-    border-bottom: 2px solid black;
-} */
-.Product-list ul{
-    display: flex;
-    flex-direction: column;
-    margin-bottom:0px;
+.widget_list ul{
+    list-style: outside none none;
+    margin: 0;
+    padding: 0;
+    padding-inline-start: 40px;
 }
-/* .Fruit{
-    display: flex;
-    flex-direction: column;
+.widget_list li a{
+    text-decoration: none;
 }
-.Fruit p{
-    border-bottom: 2px solid black;
+.widget_list h3 {
+    font-size: 15px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    text-transform: uppercase;
+    font-weight: 500;
+    line-height: 20px;
+    border-bottom: 1px solid #ededed;
 }
-.Fruit li{
-    display: flex;
-   
-} */
+@media only screen and (max-width: 1199px) and (min-width: 992px){
+.widget_list h3 {
+    font-size: 18px;
+}}
+.widget_list.widget_categories > ul > li.widget_sub_categories > a {
+    position: relative;
+    text-decoration: none;
+}
+.widget_list.widget_categories > ul > li > a {
+    font-size: 13px;
+    display: block;
+    line-height: 30px;
+    padding: 0 20px;
+    text-decoration: none;
+    color: inherit;
+}

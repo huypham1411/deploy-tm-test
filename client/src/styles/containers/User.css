@@ -1,0 +1,114 @@
+.profile-container{
+    display: flex;
+    flex-direction: row;
+    /* margin: 30px; */
+    /* background-color:rgb(212, 212, 212); */
+    /* border-radius: 10px; */
+    max-width: 100%;
+    flex-wrap: wrap;
+}
+
+.profile-container input[type="text"],
+.profile-container input[type="password"] {
+  width: 100%;
+  display: block;
+  border: 1px solid black;
+  background-color: white;
+  border-radius: 5px;
+  padding-left: 10px;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  font-family: Poppins;
+  box-sizing: border-box; }
+  input:focus {
+    border: 2px solid green; 
+  }
+
+.user-profile{
+    /* display: flex; */
+    flex:1;
+    flex-direction: column;
+    width: 60%;
+    max-width: 100%;
+    height: auto;
+    justify-content: space-between;
+}
+.user-contact{
+    display: flex;
+    flex-direction: row;
+    max-width: 100%;
+    flex-wrap: wrap;
+    
+}
+/* .user-img {
+    width: fit-content;
+    background-color: rgb(212, 212, 212);
+    height: fit-content;
+    justify-content: center;
+} */
+.user-img {
+display:flex;
+flex-direction: column;
+align-items: center;
+padding-top: 100px;
+}
+.user-img img{
+    width: 150px;
+    border-radius: 250px;
+    height: auto;
+    max-width: 100%;
+    min-width: 30%;
+}
+.u-id{
+    border-radius: 10px;
+    background-color:white;
+    padding: 10px;
+    max-width:100%;
+    height: auto;
+    margin: 10px;
+}
+.u-id p{
+    word-wrap: break-word;
+}
+.uname{
+    border-radius: 10px;
+    background-color:rgb(212, 212, 212);
+    padding: 10px;
+    max-width:100%;
+    margin: 10px;
+}
+.u-mail{
+    border-radius: 10px;
+    background-color:rgb(212, 212, 212);
+    padding: 10px;
+    max-width:100%;
+    height: auto;
+    margin: 10px;
+    width: 45%;
+}
+.u-phone{   
+    border-radius: 10px;
+    background-color:rgb(212, 212, 212);
+    padding: 10px;
+    max-width:100%;
+    height: auto;
+    margin: 10px;
+}
+.u-address{
+    border-radius: 10px;
+    background-color:rgb(212, 212, 212);
+    padding: 10px;
+    max-width:100%;
+    height: auto;
+    margin: 10px;
+}
+
+.orderHis li{
+    list-style: none;
+}
+.hisBtn{
+    background-color: rgba(0, 255, 34, 0.644);
+    width: fit-content;
+    height: auto;
+    max-width: 100%;
+}

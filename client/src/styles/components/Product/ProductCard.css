@@ -1,11 +1,14 @@
-.cardProduct{
+/* .cardProduct{
     display: flex;
-    width: auto;
     flex-direction: column;
+    flex-wrap: wrap;
+    max-width: 100%;
 }
 .detail{
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
+    max-width: 100%;
 }
 .productDetail{
     display: flex;
@@ -29,4 +32,103 @@
     background-color: #B0EACD;
     height: fit-content;
     text-align: center;
+} */
+.cardProduct{
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    display: flex;
+    max-width: 100%;
+    flex-direction: row;
+
+}
+
+.productInfoImg{
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+    border-style: none;
+}
+
+.productDetail h1 {
+    text-transform: capitalize;
+    line-height: 20px;
+    font-size: 22px;
+    font-weight: 400;
+    margin-bottom: 22px;
+}
+@media only screen and (max-width: 991px) and (min-width: 768px){
+.productDetail h1 {
+    font-size: 20px;
+    margin-bottom: 17px;
+}}
+@media only screen and (max-width: 767px){
+.productDetail h1 {
+    margin-bottom: 17px;
+    font-size: 18px;
+}}
+.price_box {
+    margin-bottom: 14px;
+    margin-top: 12px;
+}
+.price_box span.current_price {
+    font-size: 23px;
+}
+@media only screen and (max-width: 767px){
+.price_box {
+    margin-bottom: 9px;
+}}
+.price_box span.current_price {
+    font-weight: 500;
+    font-size: 17px;
+    color: #40A944;
+}
+.price_box span.old_price {
+    font-size: 20px;
+}
+.price_box span.old_price {
+    text-decoration: line-through;
+    font-weight: 400;
+    font-size: 15px;
+    margin-left: 5px;
+}
+.price_box span {
+    line-height: 16px;
+}
+@media only screen and (max-width: 767px){
+.price_box span.current_price {
+    font-size: 18px;
+}}
+
+.product_ratting {
+    margin-bottom: 17px;
+}
+@media only screen and (max-width: 767px){
+.product_ratting {
+    margin-bottom: 12px;
+}}
+.product_ratting ul li {
+    display: inline-block;
+}
+.product_d_right .product_ratting ul li a {
+    color: #FEB954;
+}
+.review a {
+    color: #5a5a5a;
+    margin-left: 10px;
+}
+.description {
+    margin-bottom: 19px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid #ededed;
+}
+.addBtn{
+    background-color: #40A944;
+    color: white;
+}
+.addBtn-container{
+    display: flex;
+    justify-content: center;
 }

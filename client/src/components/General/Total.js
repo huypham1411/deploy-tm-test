@@ -29,7 +29,7 @@ class Total extends Component{
             paymentData:data
         }
         const token = localStorage.getItem('auth-token');
-        Axios.post('/payment',variables,{headers:{"auth-token":token}}).then(data=>
+        Axios.post('http://localhost:3030/payment',variables,{headers:{"auth-token":token}}).then(data=>
        { if(data.data.success){
         Swal.fire({
             position: 'center',
@@ -62,7 +62,7 @@ class Total extends Component{
     }
     render(){   
         return(
-            <div className="cart_container">
+            <div className="total_container">
                 <div className="cart_collection">                 
                         <li className="collection-item"><b>Total: {this.props.total} $</b></li>
                     </div>

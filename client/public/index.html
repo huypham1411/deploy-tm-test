@@ -1,40 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <link rel="preconnect" href="https://i.imgur.com" async>
+    <link rel="preconnect" href="http://localhost:3030" async>
+    <link rel="preconnect" href="https://www.facebook.com" async>
+    <link rel="preconnect" href="https://connect.facebook.net" async>
+    <link rel="preconnect" href="https://res.cloudinary.com" async>
     <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" async/>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-    <meta name="google-site-verification" content="36Pu1YLd03_KdqB_tElm0yMYVdn9GxPoYyXmlcAJ7AE" />
+    
+    <link rel="preload" href="/client/src/fonts/Roboto-Regular.ttf" as="font" async/>
+    <link rel="preload" href="/client/src/fonts/Galada-Regular.ttf" as ="font" async/> 
+    <link rel="preload" href="/client/src/fonts/Lobster-Regular.ttf" as ="font" async/> 
     <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-    />
+      rel="preload"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons " as="fonts" async/>
     <meta name="theme-color" content="#000000" />
 
     <meta
       name="description"
-      content="In this website we sell fresh organic vegetables, fruits and spices"
+      content="We sell fresh organic vegetable with acceptable prices. If you want to buy fruits, vegetable or spices without going to the market and 
+      have a good quality, fresh and organic feel free to contact us - the Uncle Veggies. We always want to bring you a heathy life !"
     />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" async/>
 
     <!-- CSS for bootrap only -->
-    <link
+    <link 
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
       integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
       crossorigin="anonymous"
+      media="screen and (max-device-width: 1500px)"
+      async
     />
 
     <!--
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json"  async/>
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
@@ -60,13 +70,15 @@
     <script
       crossorigin
       src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"
-    ></script>
+    ></script> -->
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js" async></script>
+<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js" async></script>
     <script
       crossorigin
       type="text/javascript"
-      src="https://unpkg.com/@brainhubeu/react-carousel@1.10.62-cdn/lib/react-carousel.js"
-    ></script> -->
-
+      src="https://unpkg.com/@brainhubeu/react-carousel@1.10.62-cdn/lib/react-carousel.js" async
+    ></script>
+  
     <div id="root"></div>
     <!--
       This HTML file is a template.
@@ -79,23 +91,23 @@
       To create a production bundle, use `npm run build` or `yarn build`.
 
       
-    -->
+    -->  <!-- JS, Popper.js, and jQuery -->
+  <script
+  src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+  integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+  crossorigin="anonymous"
+></script>
+<script
+  src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+  integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+  crossorigin="anonymous" async
+></script>
+<script
+  src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+  integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+  crossorigin="anonymous" async
+></script>
   </body>
 
-  <!-- JS, Popper.js, and jQuery -->
-  <script
-    src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-    crossorigin="anonymous"
-  ></script>
-  <script
-    src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-    crossorigin="anonymous"
-  ></script>
-  <script
-    src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
-    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
-    crossorigin="anonymous"
-  ></script>
+
 </html>

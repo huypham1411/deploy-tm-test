@@ -1,11 +1,13 @@
-import React, { useState } from "react";
-import Button from "../General/Button";
+import React, { useState, lazy, Suspense } from "react";
+// import Button from "../General/Button";
 import Form from "../General/Form";
 import Image from "../../assets/Logo.svg";
 import "../../styles/components/General/Header.css";
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { usrLogout } from "../../action/user-login";
+
+const Button = lazy(()=>import('../General/Button'))
 const Header = () => {
   const [appear, setAppear] = useState(false);
   const onLog = useSelector((state) => state.loginReducer);
@@ -19,7 +21,8 @@ const Header = () => {
             <img src={Image} alt="Logo" />
           </Link> 
         </div>
-        {!onLog.username || !auth ? (
+        {!onLog.username? (
+          <Suspense fallback={<div/>}>
           <div className="btnLocation">
             <div id="btn1">
               <Button
@@ -35,8 +38,9 @@ const Header = () => {
                 <Button name="Sign up" className="header-btn" color="#FD5E53" />
               </Link>
             </div>
-          </div>
+          </div></Suspense>
         ) : (
+          <Suspense fallback={<div/>}>
           <div className="btnLocation">
             <div className="usr-name">
             <p>
@@ -54,6 +58,7 @@ const Header = () => {
               />
             </Link>
           </div>
+          </Suspense>
         )}
         {!onLog.username && appear && <Form />}
       </div>

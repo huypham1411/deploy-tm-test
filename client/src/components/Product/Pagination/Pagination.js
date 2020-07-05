@@ -6,17 +6,17 @@ import '../../../styles/components/Product/Pagination.css';
 const Pagination = ({ maxPage }) => {
     const [pageActive, setPageActive] = useState(1);
     console.log(pageActive)
-    const styles = {
-        borderRadius: 10,
-        backgroundColor: '#00DD75'
-    }
-    const checkActive = (match, location) => {
-        //some additional logic to verify you are in the home URI
-        if (!location) return false;
-        const { pathname } = location;
-        // console.log(pathname);
-        return pathname === "/";
-    }
+    // const styles = {
+    //     borderRadius: 10,
+    //     backgroundColor: '#00DD75'
+    // }
+    // const checkActive = (match, location) => {
+    //     //some additional logic to verify you are in the home URI
+    //     if (!location) return false;
+    //     const { pathname } = location;
+    //     // console.log(pathname);
+    //     return pathname === "/";
+    // }
     const dispatch = useDispatch();
     const pageNumbers = [];
     for (let i = 1; i <= Math.ceil(maxPage); i++) {
@@ -24,11 +24,10 @@ const Pagination = ({ maxPage }) => {
     }
 
     const paging = pageNumbers.map((number, index) => (
-        <li key={number}>
-            <a href={`#${number}`} className={number===pageActive ? 'Pactive' : ''} onClick={() => {
+        <li key={number} className={number===pageActive ? 'Pactive' : ''} onClick={() => {
                 setPageActive(index+1)
                 dispatch(pageGet(number))
-            }}>{number}</a>
+            }}>{number}
         </li>
     ))
 console.log(paging)

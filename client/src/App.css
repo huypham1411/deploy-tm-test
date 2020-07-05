@@ -1,17 +1,22 @@
 @font-face {
-    font-family: 'Roboto';
-    src: local('Roboto'), url(./fonts/Roboto-Regular.ttf) format('truetype');
+    font-family: 'Galada';
+    src: local('Galada'), url('./fonts/Galada-Regular.ttf') format('truetype');
+    font-display: swap;
+    font-family: 'Lobster';
+    src: local('Lobster'),url('./fonts/Lobster-Regular.ttf') format('truetype');
 }
 
 body{
     /* margin:0;
     padding:0; */
     width: auto;
-    font-family: Roboto;
+    /* font-family: 'Roboto'; */
     /* display: flex;
     flex-wrap: wrap; */
-
+    max-width: 100%;
+    height: auto;
 }
+
 a{
     text-decoration: none;
 }

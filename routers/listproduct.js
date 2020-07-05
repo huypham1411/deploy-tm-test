@@ -215,6 +215,20 @@ router.get('/',async (req,res)=>{
   catch(err){res.status(404).send(err)}
 })
 
+router.delete('/',async (req,res)=>{
+  try{
+    Product.findByIdAndDelete({_id:req.body.id}, (err, result) => {
+      if (err) return res.send(500, err)
+      console.log('got deleted');
+      return res.status(200).json({
+         status : 'success',
+         message : 'Delete product'
+      });
+      });
+  }
+  catch(err){res.status(404).send(err)}
+})
+
 
 router.put('/:id',async (req,res)=>{
   Product.findOne({id : req.params.id}, function (err, product) {

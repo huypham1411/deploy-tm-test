@@ -2,13 +2,20 @@
     width: 100%;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    position: relative;
 }
 .SearchPage .searchResult{
     width: 100%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: center;
+    position: relative;
+}
+.searchText{
+    z-index: -500;
 }
 .SearchPage .card-container{
-    width: 30%
+    max-width: 100%;
 }

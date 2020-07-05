@@ -1,10 +1,12 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { removeItem, addQuantity, subtractQuantity,addToCart } from '../../action/cart-action'
 import '../../styles/components/General/Cart.css';
-import Total from '../General/Total'
-class Cart extends Component {
+import Total from '../General/Total';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {faTrash} from '@fortawesome/free-solid-svg-icons'
+class Cart extends PureComponent {
     //to remove the item completely
     handleRemove = (id) => {
         this.props.removeItem(id);
@@ -38,20 +40,20 @@ class Cart extends Component {
             (
                 this.props.addedItems.map(item => {
                     return (
-
-                        <li className="cart" key={item.id}>
-                            <div className="item-img">
+                        <tr key={item.id}>
+                            <td className='product_remove'>
+                                <li><FontAwesomeIcon icon={faTrash} onClick={() => { this.handleRemove(item.id) }}/></li>
+                            </td>
+                            <td className="product_thumb">
                                 <img src={item.img} alt={item.name} className="" />
-                            </div>
-
-                            <div className="item-desc">
-                                <div className="product-name">
-                                    <h2>{item.name}</h2>
-                                </div>
-                                <div className="price">
-                                    <p>Price: {Math.round(item.price * 100) / 100}$</p>
-                                </div>
-                            </div>
+                            </td>
+                            <td className="product_name">
+                                <h4>{item.name}</h4>
+                            </td>
+                            <td className="product-price">
+                                <p>{Math.round(item.price * 100) / 100}$</p>
+                            </td>
+                            <td className='product_quantity'>
                             <div className="add-remove">
                                 <Link to="/cart">
                                     <button className="quantity-btn" onClick={() => { this.handleSubtractQuantity(item.id) }}>
@@ -67,10 +69,8 @@ class Cart extends Component {
                                     </button>
                                 </Link>
                             </div>
-                            <div>
-                                <button className="remove-btn" onClick={() => { this.handleRemove(item.id) }}>Remove</button>
-                            </div>
-                        </li>
+                            </td>
+                        </tr>
 
                     )
                 })
@@ -83,21 +83,52 @@ class Cart extends Component {
             )
 
         return (
-            <div className="cart_container">
-                <div className="cart_ordered">
-                    <div>
-                        <h1>You have ordered:</h1>
+        <div className='container_cart'>
+            <div class="breadcrumbs_area">
+                <div class="container">   
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="breadcrumb_content">
+                                <h3>Cart</h3>
+                            </div>
+                        </div>
                     </div>
-                    <hr></hr>
-                    <ul className="cart_collection">
-                        {addedItems}
-
-                    </ul>
-                </div>
+                </div>         
+            </div>
+            <div className="container">
+                <div className='row'>
+                    <div className='col-12'>
+                        <div className='table_desc'>
+                            <div className="cart_page table-responsive">
+                                {/* <div>
+                                    <h1>You have ordered:</h1>
+                                </div>
+                                <hr></hr>
+                                <ul className="cart_collection">
+                                    {addedItems}
+                                </ul> */}
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th className='product_remove'>Delete</th>
+                                            <th className='product_thumb'>Image</th>
+                                            <th className='product_name'>Product</th>
+                                            <th className='product_price'>Price</th>
+                                            <th className='product_quantity'>Quantity</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {addedItems}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>    
+                    </div>
+                </div>    
                 <hr></hr>
                 <Total></Total>
             </div>
-
+        </div>
         )
 
     }

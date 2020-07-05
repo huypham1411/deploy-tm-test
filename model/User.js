@@ -37,6 +37,9 @@ phonenum:{
 history:{
     type:Array,
     default:[]
+},
+avatar:{
+    type:String
 }
 })
 

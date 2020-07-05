@@ -1,11 +1,15 @@
 .quantitiesBtn{
     display: flex;
     flex-direction: row;
+    justify-content: center;
 }
 .inputne{
     width: 30px;
 }
 .quantitiesBtn button{
-    background-color: #B0EACD;
-    border: none;
+    background-color: #40A944;
+    width: 30px;
+    height: 30px;
+    padding: 0px;
+    color: white;
 }

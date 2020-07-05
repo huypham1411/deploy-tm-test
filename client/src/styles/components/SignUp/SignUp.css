@@ -1,6 +1,10 @@
+.signUp{
+  max-width: 100%;
+  height: auto;
+}
 .signup_box_container {
   max-width: 100%;
-  height: fit-content;
+  height: auto;
   display: flex;
   flex-direction: row;
   /* justify-content: center; */

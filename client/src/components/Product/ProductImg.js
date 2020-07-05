@@ -4,7 +4,18 @@ import '../../styles/components/Product/ProductImg.css'
 const ProductImg = (props) =>{
     return(
         //hình test nhớ thay
-        <img className = "header-img" alt="product-header-img" src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/assortment-of-colorful-ripe-tropical-fruits-top-royalty-free-image-995518546-1564092355.jpg?crop=0.982xw:0.736xh;0,0.189xh&resize=768:*"></img>
+        <div class="breadcrumbs_area">
+        <div class="container">   
+            <div class="row">
+                <div class="col-12">
+                    <div class="breadcrumb_content">
+                        <h3>Shop</h3>
+                    </div>
+                </div>
+            </div>
+        </div>         
+    </div>
+        
     )
 }
 

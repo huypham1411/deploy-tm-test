@@ -6,15 +6,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useHistory } from "react-router-dom";
 import Swal from 'sweetalert2';
 import {
-  faFacebookSquare,
-  faInstagramSquare,
-  faTwitterSquare,
-} from "@fortawesome/free-brands-svg-icons";
-import {
-  faMapMarkedAlt,
   faEnvelope,
   faKey,
-  faPhoneAlt,
   faUser,
   faPhone,
   faLocationArrow
@@ -51,7 +44,7 @@ const SignUp = (props) => {
       return;
     }
     axios
-      .post("/SignUp", {
+      .post("http://localhost:3030/SignUp", {
         name,
         email,
         password,

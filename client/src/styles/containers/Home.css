@@ -1,5 +1,5 @@
 .home{
-    margin-top:30px;
+    /* margin-top:30px; */
     display: flex;
     flex-direction: column;
     max-width: 100%;
@@ -10,7 +10,7 @@
     list-style: none;
 }
 .wallpaper{
-    max-width: fit-content;
+    max-width: 100%;
     position: absolute;
     height: fit-content
 }
