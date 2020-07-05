@@ -13,7 +13,7 @@ console.log('data');
 console.log(data)
 
 async function fetchData() {
-    await Axios.get(`http://localhost:3030/products`)
+    await Axios.get(`/products`)
         .then(dataFetch => dataFetch.data)
         .then(dataFetch => {
             data.items = dataFetch

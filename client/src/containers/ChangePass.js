@@ -24,7 +24,7 @@ class ChangePass extends React.Component {
     }
 
     check() {
-        axios.post('http://localhost:3030/user/checkpass', {
+        axios.post('/user/checkpass', {
             id : this.state.id,
             password : this.state.password
         })
@@ -60,7 +60,7 @@ class ChangePass extends React.Component {
                 title: "Password not match"
               })
 }
-        axios.post('http://localhost:3030/user/changepass', {
+        axios.post('/user/changepass', {
             id : this.state.id,
             password : this.state.new_pass
         })

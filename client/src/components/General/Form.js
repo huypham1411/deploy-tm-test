@@ -18,7 +18,7 @@ const Form =()=>{
     const loginFunciton=()=>{
         //e.preventDefault();
     
-    axios.post('http://localhost:3030/login',{role, data : {email, password}})
+    axios.post('login',{role, data : {email, password}})
         .then((data)=>{
         //console.log(data.data)
         localStorage.setItem('auth-token',data.headers['auth-token'])
@@ -59,7 +59,7 @@ const Form =()=>{
                 role: 'facebook',
             }
 
-            await axios.post('http://localhost:3030/social', data)
+            await axios.post('/social', data)
             .then(res2 => {
                 if (res2.data.status === 'success') {
                     Swal.fire({
@@ -85,7 +85,7 @@ const Form =()=>{
             })
         })
         
-        await axios.post('http://localhost:3030/login',{id : response.userID })
+        await axios.post('/login',{id : response.userID })
         .then((data)=>{
         localStorage.setItem('auth-token',data.headers['auth-token'])
         Swal.fire({
@@ -122,7 +122,7 @@ const Form =()=>{
             role: 'gmail'
         }
 
-        axios.post('http://localhost:3030/social', (data))
+        axios.post('/social', (data))
         .then(res => {
             if (res.data.status === 'success') {
                 Swal.fire({
@@ -143,7 +143,7 @@ const Form =()=>{
             }
         })
 
-        axios.post('http://localhost:3030/login',{id : response.Ea })
+        axios.post('/login',{id : response.Ea })
         .then((data)=>{
         localStorage.setItem('auth-token',data.headers['auth-token'])
         Swal.fire({
