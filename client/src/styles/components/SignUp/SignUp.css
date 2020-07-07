@@ -10,7 +10,8 @@
   /* justify-content: center; */
 }
 .signup_box_container input[type="text"],
-.signup_box_container input[type="password"] {
+.signup_box_container input[type="password"],
+.signup_box_container input[type="email"] {
   width: 70%;
   display: block;
   border: 1px solid black;
