@@ -204,7 +204,50 @@ router.get('/',async (req,res)=>{
  }
 })
 
+router.post('/rate',async (req,res)=>{
+  const id= req.body.id;
+  const rating=req.body.rating;
+  //console.log(req.body)
+  try{
+    // await Product.updateMany({},{ $inc: { numRate: 1 }},
+    //   { new: true })
+    await Product.findOneAndUpdate({_id:id},{$inc: { numRate: 1 }},
+      { new: true }).exec((err,product)=>{
+        if (err) console.log(err);
+        if(product.rating!==0){product.rating=Math.ceil((product.rating+rating)/2)}
+        else product.rating=rating;
+        product.save((err, data) => {
+          //console.log(data)
+          if (err) console.log(err);
+          return res.send({status:'success',numRate:data.numRate,rating:data.rating});
+        }
+      )}
+        )
+        
+  }
+  catch(err){res.status(404).send(err)}
+})
 
+router.post('/review',async (req,res)=>{
+  const id= req.body.id;
+  const content=req.body.review;
+  const username=req.body.username;
+  console.log(id,content,username)
+  try{
+    await Product.findOneAndUpdate({_id:id},{},(err,product)=>{
+        if (err) console.log(err);
+        product.review.push({username:username,review:content,time:Date.now()})
+        product.save((err, data) => {
+          //console.log(data)
+          if (err) console.log(err);
+          return res.send({status:'success',review:data.review});
+        }
+      )},{new: true}
+        )
+        
+  }
+  catch(err){res.status(404).send(err)}
+})
 
  router.get('/:id',async (req,res)=>{
   const id= req.params.id;

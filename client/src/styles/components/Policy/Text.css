@@ -1,31 +1,129 @@
 .Policy {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .policyInfo {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 100%;
 }
 
-.policyInfo h1{
-    margin: 10px 10px 10px 0;
+.policyInfo h1 {
+  margin: 10px 10px 10px 0;
 }
 
-
-pre{
-    word-wrap:break-word;
+.policyInfo h2 {
+  margin: 10px 10px 10px 0;
 }
 
+pre {
+  word-wrap: break-word;
+}
 
-#shippingPrice table, th, td {
-    border: 2px solid black;
-    text-align: center;
-    padding: 5px;
-  }
+#shippingPrice table,
+th,
+td {
+  border: 2px solid black;
+  text-align: center;
+  padding: 5px;
+}
 
 #shippingPrice thead {
+  font-weight: bold;
+}
+
+.policyInfo p {
+  text-indent: 30px;
+}
+
+#policy_toc_container {
+  background: #f9f9f9 none repeat scroll 0 0;
+  border: 1px solid #aaa;
+  display: table;
+  font-size: 95%;
+  margin-bottom: 1em;
+  padding: 20px;
+  width: 45%;
+}
+
+@media only screen and (max-width: 768px) {
+  #policy_toc_container {
+    width: 100%;
+  }
+}
+
+.policy_toc_title {
+  font-weight: 700;
+  text-align: center;
+}
+
+#policy_toc_container li,
+#policy_toc_container ul,
+#policy_toc_container ul li {
+  list-style: outside none none !important;
+}
+
+@media only screen and (max-width: 760px),
+  (min-device-width: 768px) and (max-device-width: 1024px) {
+  /* Force table to not be like tables anymore */
+  table,
+  thead,
+  tbody,
+  th,
+  td,
+  tr {
+    display: block;
+    width: 100%;
+  }
+
+  /* Hide table headers (but not display: none;, for accessibility) */
+  thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+
+  tr {
+    border: 1px solid #ccc;
+  }
+
+  td {
+    /* Behave  like a "row" */
+    border: none;
+    border-bottom: 1px solid #eee;
+
+    position: relative;
+    padding-left: 50%;
+  }
+
+  td:before {
+    /* Now like a table header */
+    position: absolute;
+    /* Top/left values mimic padding */
+    top: 6px;
+    left: 6px;
+    width: 45%;
+    padding-right: 10px;
+
+    white-space: nowrap;
     font-weight: bold;
+  }
+
+  /*
+	Label the data
+	*/
+  td:nth-of-type(1):before {
+    content: "LOCATION";
+  }
+  td:nth-of-type(2):before {
+    content: "SHIPPING AREA";
+  }
+  td:nth-of-type(3):before {
+    content: "PRICE";
+  }
+  td:nth-of-type(4):before {
+    content: "FREE FOR BILL ";
+  }
 }

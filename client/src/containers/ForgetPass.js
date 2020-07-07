@@ -1,12 +1,12 @@
 import React, { lazy, Suspense } from "react";
 // import Forget_pass from "../components/Forget_pass/Forget_pass";
 
-const Forget_pass = lazy(()=>import('../components/Forget_pass/Forget_pass'));
+const Forgetpass = lazy(()=>import('../components/Forget pass/ForgetPass'));
 const ForgetPass = () => {
   return (
     <div className="Forgot_pass">
       <Suspense fallback={<div/>}>
-      <Forget_pass />
+      <Forgetpass />
       </Suspense>
     </div>
   );

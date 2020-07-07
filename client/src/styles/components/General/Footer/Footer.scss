@@ -27,10 +27,12 @@
     li {
       font-size: 20px;
       font-weight: bold;
+      list-style-type: none;
     }
 
     li:hover {
-      color: green;
+      transform: 0.5 ease;
+      color: rgb(21, 199, 139);
     }
   }
 }
@@ -65,6 +67,7 @@
 
     li {
       font-size: 40px;
+      list-style-type: none;
     }
   }
 }

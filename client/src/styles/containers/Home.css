@@ -1,16 +1,16 @@
-.home{
-    /* margin-top:30px; */
-    display: flex;
-    flex-direction: column;
-    max-width: 100%;
-    width: auto;
-    justify-content: center;
+.home {
+  /* margin-top:30px; */
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+  width: auto;
+  justify-content: center;
 }
-.home li{
-    list-style: none;
+.home li {
+  list-style: none;
 }
-.wallpaper{
-    max-width: 100%;
-    position: absolute;
-    height: fit-content
+.wallpaper {
+  max-width: 100%;
+  position: absolute;
+  height: fit-content;
 }

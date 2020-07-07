@@ -20,7 +20,7 @@ const Nav = () => {
   const styles = {
     borderRadius: 10,
     backgroundColor: "#00DD75",
-    color:"#fff"
+    color: "#fff",
   };
   //https://stackoverflow.com/questions/47879663/root-navlink-always-get-active-class-react-router-dom
   const checkActive = (match, location) => {
@@ -68,7 +68,15 @@ const Nav = () => {
             </NavLink>
           </li>
           <li className="nav-item">
-            <NavLink to="/Products" activeStyle={styles} onClick={()=>{dispatch(sortChoose('default'));dispatch(filterChoose('default'));dispatch(pageReset())}}>
+            <NavLink
+              to="/Products"
+              activeStyle={styles}
+              onClick={() => {
+                dispatch(sortChoose("default"));
+                dispatch(filterChoose("default"));
+                dispatch(pageReset());
+              }}
+            >
               Our product
             </NavLink>
           </li>
@@ -97,13 +105,12 @@ const Nav = () => {
       {/* <div className="img-container"><img src={cart} onClick={()=>{setAppear(!appear)}} alt="cart"></img></div>
             {appear&&<Cart/>}
         */}
-      
-        <div className="img-container">
+
+      <div className="img-container">
         <Link to="/cart">
           <img src={cart} alt="cart"></img>
-          </Link>
-        </div>
-      
+        </Link>
+      </div>
     </nav>
   );
 };

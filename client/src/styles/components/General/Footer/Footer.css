@@ -1,6 +1,3 @@
-.container{
-  margin-top: 40px;
-}
 .footer {
   background-color: #b0eacd;
   margin-top: 50px;
@@ -41,10 +38,13 @@
 .footer-nav__menu li {
   font-size: 20px;
   font-weight: bold;
+  list-style-type: none;
 }
 
 .footer-nav__menu li:hover {
-  color: green;
+  -webkit-transform: 0.5 ease;
+          transform: 0.5 ease;
+  color: #15c78b;
 }
 
 .footer-contact__info {
@@ -85,9 +85,6 @@
 
 .footer-about__icon li {
   font-size: 40px;
-}
-
-.footer .container li{
-  list-style: none;
+  list-style-type: none;
 }
 /*# sourceMappingURL=Footer.css.map */

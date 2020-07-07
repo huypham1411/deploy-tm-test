@@ -18,7 +18,7 @@ const Form =()=>{
     const loginFunciton=()=>{
         //e.preventDefault();
     
-    axios.post('login',{role, data : {email, password}})
+    axios.post('/login',{role, data : {email, password}})
         .then((data)=>{
         //console.log(data.data)
         localStorage.setItem('auth-token',data.headers['auth-token'])

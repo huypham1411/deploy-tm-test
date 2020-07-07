@@ -1,23 +1,22 @@
-/* * {
+* {
   padding: 0;
   margin: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-} */
+}
 
 ul {
+  /* lam mat dau . truoc li */
   list-style: none;
 }
 
-/* li {
+li {
   list-style-type: none;
-} */
+}
 
-.hero-container {
-  max-width: 100%;
+.container {
+  max-width: 1140px;
   margin: 0 auto;
-  justify-content: center;
-  align-items: center;
 }
 
 a {

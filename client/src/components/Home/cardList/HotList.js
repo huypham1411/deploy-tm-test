@@ -1,6 +1,5 @@
 import React, { Suspense, lazy } from "react";
 import "../../../styles/components/Home/HotList.css";
-import { Link } from "react-router-dom";
 import Card from "../cardList/Card";
 import { addToCart } from "../../../action/cart-action";
 import { connect } from "react-redux";
@@ -53,8 +52,8 @@ class HotList extends React.Component {
       <div className="hotList">
         <Suspense fallback={<div/>}>
         <Carousel
-          autoPlay={2000}
-          animationSpeed={1500}
+          // autoPlay={2000}
+          // animationSpeed={1500}
           slidesPerPage={4}
           
           infinite

@@ -163,7 +163,6 @@ const SignUp = (props) => {
               <FontAwesomeIcon icon={faEnvelope} />
               <input
                 type="email"
-                type="text"
                 placeholder="Email"
                 id="email"
                 value={email}

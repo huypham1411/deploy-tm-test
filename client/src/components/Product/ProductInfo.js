@@ -4,24 +4,37 @@ import '../../App.css';
 // import { data } from '../../data/data';
 import '../../styles/components/Product/ProductInfo.css';
 import ProductCard from '../Product/ProductCard';
+import { useSelector } from "react-redux";
+import Axios from 'axios';
 function ProductInfo({ match }) {
+    const onLog = useSelector((state) => state.loginReducer);
     useEffect(() => {
+        const fetchItems = async () => {
+            const data = await fetch(
+                `/products/${match.params.id}`
+            )
+            const items = await data.json();
+            setItems(items);
+            setArrv(items.review)
+            //console.log(items);
+        }
         fetchItems();
         // console.log(match.params.id);
         // console.log(data);
-    }, []);
-
+    }, [match.params.id]);
+    const [rv,setRv]=useState('');
     const [items, setItems] = useState([]);
-
-    const fetchItems = async () => {
-        const data = await fetch(
-            `/products/${match.params.id}`
-        )
-        const items = await data.json();
-        setItems(items);
-        //console.log(items);
+    const [arrRv,setArrv]=useState([]);
+    const submitRv=async ()=>{
+        if(!rv){return;}
+        await Axios.post('/products/review',{id:items._id,review:rv,username:onLog.username})
+        .then(res=>{
+            if(res.data.status==='success'){
+                setRv('')
+                setArrv(res.data.review)
+            }
+        })
     }
-
     return (
         <div className='product-info-container'>
             <div class="breadcrumbs_area">
@@ -38,13 +51,15 @@ function ProductInfo({ match }) {
             <div className="productInfo">
                 <ProductCard
                     key={items._id}
+                    _id={items._id}
                     img={items.img}
                     name={items.name}
                     description={items.description}
                     status={items.status}
                     price={items.price}
                     id={items.id}  
-
+                    rating={items.rating}
+                    numRate={items.numRate}
                 />
             </div>
             <div className='preview-container'>
@@ -56,60 +71,35 @@ function ProductInfo({ match }) {
                             </div>
                             <div class="tab-pane fade active show" id="reviews" role="tabpanel">
                                 <div class="reviews_wrapper">
-                                    <h2>1 review for Donec eu furniture</h2>
+                                <h2> review for {items.name}</h2>
                                     <div class="reviews_comment_box">
-                                        <div class="comment_thmb">
-                                            <img src="https://demo.hasthemes.com/safira-preview/safira/assets/img/blog/comment2.jpg" alt=""></img>
-                                        </div>
-                                        <div class="comment_text">
+                                        {arrRv.length?
+                                        arrRv.map((item,key)=>{
+                                            let cdate = (new Date(item.time)).toString();
+                                            return(<div class="comment_text" key={key}>
                                             <div class="reviews_meta">
-                                                <div class="star_rating">
-                                                    <ul>
-                                                        <li><a href="#"><i class="icon-star"></i></a></li>
-                                                       <li><a href="#"><i class="icon-star"></i></a></li>
-                                                       <li><a href="#"><i class="icon-star"></i></a></li>
-                                                       <li><a href="#"><i class="icon-star"></i></a></li>
-                                                       <li><a href="#"><i class="icon-star"></i></a></li>
-                                                    </ul>   
-                                                </div>
-                                                <p><strong>admin </strong>- September 12, 2018</p>
-                                                <span>roadthemes</span>
+                                        <p><strong>{item.username}</strong>- {cdate}</p>
+                                        <span>{item.review}</span>
                                             </div>
-                                        </div>
+                                        </div>)
+                                        })
+                                       :null}
                                         
                                     </div>
                                     <div class="comment_title">
                                         <h2>Add a review </h2>
-                                        <p>Your email address will not be published.  Required fields are marked </p>
                                     </div>
                                     <div class="product_ratting mb-10">
-                                       <h3>Your rating</h3>
-                                        <ul>
-                                            <li><a href="#"><i class="icon-star"></i></a></li>
-                                               <li><a href="#"><i class="icon-star"></i></a></li>
-                                               <li><a href="#"><i class="icon-star"></i></a></li>
-                                               <li><a href="#"><i class="icon-star"></i></a></li>
-                                               <li><a href="#"><i class="icon-star"></i></a></li>
-                                        </ul>
                                     </div>
                                     <div class="product_review_form">
                                         <form action="#">
                                             <div class="row">
                                                 <div class="col-12">
                                                     <label for="review_comment">Your review </label>
-                                                    <textarea name="comment" id="review_comment"></textarea>
+                                                    <textarea name="comment" id="review_comment" onChange={(e)=>setRv(e.target.value)}></textarea>
                                                 </div> 
-                                                <div class="col-lg-6 col-md-6">
-                                                    <label for="author">Name</label>
-                                                    <input id="author" type="text"></input>
-
-                                                </div> 
-                                                <div class="col-lg-6 col-md-6">
-                                                    <label for="email">Email </label>
-                                                    <input id="email" type="text"></input>
-                                                </div>  
                                             </div>
-                                            <button type="submit">Submit</button>
+                                            {onLog.username?<button type="submit" onClick={submitRv}>Submit</button>:<p>You need login to submit review</p>}
                                          </form>   
                                     </div> 
                                 </div>     

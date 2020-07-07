@@ -1,22 +1,26 @@
 .circle-wrapper {
-    padding: 68px 0 60px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    width: 100%;
-    max-width: 100%;
+  padding: 68px 0 60px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+  max-width: 100%;
 }
-.text-cate{
-    text-align: center;
-    font-family: 'Lobster';
+.circle-wrapper a{
+  text-decoration: none;
+  color: inherit;
 }
-@media only screen and (max-width: 991px) and (min-width: 768px){
-    .circle-wrapper {
-        padding: 68px 0 37px;
-    }
+.text-cate {
+  text-align: center;
+  font-family: "Lobster";
 }
-@media only screen and (max-width: 767px){
-    .circle-wrapper {
-        padding: 58px 0 24px;
-    }
+@media only screen and (max-width: 991px) and (min-width: 768px) {
+  .circle-wrapper {
+    padding: 68px 0 37px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .circle-wrapper {
+    padding: 58px 0 24px;
+  }
 }

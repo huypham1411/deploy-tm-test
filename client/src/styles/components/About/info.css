@@ -26,6 +26,6 @@
 }
 
 .info-image img {
-  width: 100%;
+  border-radius: 10px;
 }
 /*# sourceMappingURL=info.css.map */

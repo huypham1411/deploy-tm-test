@@ -8,6 +8,13 @@ const productRoute = require('./routers/listproduct');
 const forgetPass = require('./routers/forgetPass');
 const mongoose = require('mongoose');
 const dotenv=require('dotenv');
+var compression = require('compression');
+var serveStatic = require('serve-static');
+app.use(serveStatic(path.join(__dirname, 'client/build/static'), {
+    maxAge: '31536000',
+    setHeaders: setCustomCacheControl
+  }))
+app.use(compression())
 dotenv.config();
 app.use(express.static('build'));
 const path = require('path')

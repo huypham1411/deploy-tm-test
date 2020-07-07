@@ -20,3 +20,8 @@ body{
 a{
     text-decoration: none;
 }
+:root{
+    --react-rater-link:"yellow";
+    --react-rater-hover: "yellow";
+    --react-rater-active: "yellow";
+}

@@ -5,11 +5,16 @@ import { addToCart } from '../../action/cart-action'
 import QuantitiesButton from './QuantitiesButton';
 import { connect } from 'react-redux'
 import Swal from 'sweetalert2';
+import Rater from 'react-rater';
+import 'react-rater/lib/react-rater.css';
+import Axios from 'axios';
 class ProductCard extends React.PureComponent {
     constructor(props) {
         super(props)
         this.state = {
-            quantity: 1
+            quantity: 1,
+            numRate:0,
+            rating:0
         }
     }
     handleClickAdd = (id) => {
@@ -17,6 +22,16 @@ class ProductCard extends React.PureComponent {
     }
     changeQuantity=(quantity)=>{
         this.setState({quantity})
+    }
+    rating(rate){
+        
+        Axios.post('/products/rate',{id:this.props._id,rating:rate}).then(res=>
+        {if (res.data.status === 'success'){
+            this.setState({numRate:res.data.numRate,rating:res.data.rating})
+            //console.log('rater',res.data.status)
+           return;
+        }}
+        )
     }
     render() {
         return (
@@ -29,11 +44,12 @@ class ProductCard extends React.PureComponent {
                         <div className="productDetail">
                         <div>
                             <h1>{this.props.name}</h1>
+                           
                             <div class=" product_ratting">
-                                <ul>
-                                    <li>5*</li>
-                                    <li class="review">(customer review )</li>
-                                </ul>
+                            <Rater total={5} style={{fontSize:30}} rating={!this.state.rating?this.props.rating:this.state.rating} onRate={(rate)=>this.rating(rate.rating)}></Rater>
+                                
+                            <p class="review">{`( ${this.state.numRate===0?this.props.numRate:this.state.numRate} times rating on this product )`}</p>
+                                
                             </div>
                             <p>Status: {this.props.status}</p>
                         </div>

@@ -23,12 +23,11 @@
   align-items: center;
   /* padding-left: 10px; */
 }
-.social{
+.social {
   flex-direction: column;
   width: fit-content;
   justify-content: center;
   align-items: center;
-  padding-left: 10px;
 }
 
 .FB_login {
@@ -56,7 +55,6 @@
   align-items: center;
   font-size: 10px;
 }
-
 
 button:hover {
   opacity: 0.8;

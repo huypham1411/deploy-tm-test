@@ -38,6 +38,7 @@
 }
 .reviews_comment_box {
     display: flex;
+    flex-direction: column;
     margin-bottom: 22px;
 }
 .comment_tmb img {
@@ -49,6 +50,7 @@
     border: 1px solid #ededed;
     position: relative;
     margin-left: 21px;
+    margin-bottom: 30px;
     padding: 12px;
     border-radius: 3px;
 }

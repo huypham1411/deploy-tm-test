@@ -110,7 +110,7 @@ class UserPage extends React.Component {
         return(
             (<div className="profile-container">
                 <div className="user-img">
-                    <img src={this.state.avatar?this.state.avatar:"https://i.pinimg.com/564x/fd/0c/55/fd0c559856ca991e9e28937dc802f0b0.jpg"}/>
+                    <img alt='user avatar' src={this.state.avatar?this.state.avatar:"https://i.pinimg.com/564x/fd/0c/55/fd0c559856ca991e9e28937dc802f0b0.jpg"}/>
                     {!this.state.role&&<input type="file" id='inp-avatar' title="foo" accept="image/png, image/jpeg" onChange={this.onChangeHandler}/>}
                 </div>
                 <div className="user-profile">

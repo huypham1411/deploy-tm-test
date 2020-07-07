@@ -30,8 +30,10 @@ switch(action.type){
                 return {...state,filter:'filter=spice'}
             case 'default':
                 return {...state,filter:'/'}
+                
            }
        }
+       break
     default: return state;
 }
 }

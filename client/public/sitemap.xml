@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://uncle-veggies.herokuapp.com/</loc>
+  <lastmod>2020-07-05T08:44:43+00:00</lastmod>
+</url>
+<url>
+  <loc>https://uncle-veggies.herokuapp.com/Products</loc>
+  <lastmod>2020-07-05T08:44:43+00:00</lastmod>
+</url>
+<url>
+  <loc>https://uncle-veggies.herokuapp.com/Policy</loc>
+  <lastmod>2020-07-05T08:44:43+00:00</lastmod>
+</url>
+<url>
+  <loc>https://uncle-veggies.herokuapp.com/About</loc>
+  <lastmod>2020-07-05T08:44:43+00:00</lastmod>
+</url>
+<url>
+  <loc>https://uncle-veggies.herokuapp.com/Signup</loc>
+  <lastmod>2020-07-05T08:44:43+00:00</lastmod>
+</url>
+<url>
+  <loc>https://uncle-veggies.herokuapp.com/ForgetPass</loc>
+  <lastmod>2020-07-05T08:44:43+00:00</lastmod>
+</url>
+<url>
+  <loc>https://uncle-veggies.herokuapp.com/cart</loc>
+  <lastmod>2020-07-05T08:44:43+00:00</lastmod>
+</url>
+<url>
+  <loc>https://uncle-veggies.herokuapp.com/Search</loc>
+  <lastmod>2020-07-05T08:44:43+00:00</lastmod>
+</url>
+<url>
+  <loc>https://uncle-veggies.herokuapp.com/User</loc>
+  <lastmod>2020-07-05T08:44:43+00:00</lastmod>
+</url>
+<url>
+  <loc>https://uncle-veggies.herokuapp.com/Products/:id</loc>
+  <lastmod>2020-07-05T08:44:43+00:00</lastmod>
+</url>
+</urlset>

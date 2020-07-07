@@ -1,4 +1,4 @@
-import React, {lazy, Suspense} from "react";
+import React from "react";
 import Image from "../../assets/Logo.svg";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";

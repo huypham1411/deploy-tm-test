@@ -32,7 +32,7 @@ const Info = () => {
 
           {/* Image */}
           <div className="info-image col-lg-6 col-md-12">
-            <img src={Image1} alt="image-info" />
+            <img src={Image1} alt="plant organic" />
           </div>
         </div>
       </div>

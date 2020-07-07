@@ -6,9 +6,6 @@ import Paypal from './Paypal';
 import Axios from 'axios';
 import Swal from 'sweetalert2';
 class Total extends Component{
-    constructor(props){
-        super(props);
-    }
     state={
         appear:false,
     }

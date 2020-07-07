@@ -132,3 +132,24 @@
     display: flex;
     justify-content: center;
 }
+
+.react-rater {
+    cursor: pointer;
+    color: #ccc;
+    position: relative; }
+    .react-rater-star.will-be-active {
+      color: #F8D791 !important;}
+    .react-rater-star.is-active {
+      color: #FFCC65 !important; }
+    .react-rater-star.is-active-half:before {
+      color: #F5D085 !important;
+      content: '\2605';
+      position: absolute;
+      left: 0;
+      width: 50%;
+      overflow: hidden; }
+    .react-rater-star.is-disabled {
+      cursor: default; 
+    }
+  
+  
