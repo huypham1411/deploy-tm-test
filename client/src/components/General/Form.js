@@ -73,15 +73,16 @@ const Form =()=>{
                     //     name: data.name,
                     //     id: data.id
                     // }
-                } else {
-                    Swal.fire({
-                        position: 'center',
-                        icon: 'error',
-                        title: res2.data.message,
-                        showConfirmButton: false,
-                        timer: 2000
-                      })
-                }
+                } 
+                // else {
+                //     Swal.fire({
+                //         position: 'center',
+                //         icon: 'error',
+                //         title: res2.data.message,
+                //         showConfirmButton: false,
+                //         timer: 2000
+                //       })
+                // }
             })
         })
         

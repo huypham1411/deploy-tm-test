@@ -22,16 +22,16 @@ const SearchPage =(props)=>{
             {
             searchResult.map(item=>{
             return <div className="card-container col-lg-4 col-md-6 col-sm-6" key={item.id}>
-            <Link to={`/Products/${item._id}`}>
+            
               <Card
                 key={item._id}
                 img={item.img}
                 price={Math.round(item.price*100)/100}
+                oldPrice={item.oldPrice}
                 productName={item.name}
-                id={item.id}
+                id={item._id}
                 handleClick={handleClick}
               />
-            </Link>
             </div>
             })
             }

@@ -23,6 +23,7 @@ class ProductCard extends React.PureComponent {
     changeQuantity=(quantity)=>{
         this.setState({quantity})
     }
+   
     rating(rate){
         
         Axios.post('/products/rate',{id:this.props._id,rating:rate}).then(res=>
@@ -55,16 +56,16 @@ class ProductCard extends React.PureComponent {
                         </div>
                         <div class="price_box">
                                 <span class="current_price">Price: {this.props.price} $</span>
-                                <span class="old_price">133$</span>
+                         {this.props.oldPrice!=="0"?<span class="old_price">{this.props.oldPrice}$</span>:null}
                         </div>
                         <div className="description">
                             <h3>Description</h3>
                             <p>{this.props.description}</p>
                         </div>
                         <div className="numberOfProducts">
-                            <QuantitiesButton quantity={this.state.quantity} changeQuantity={this.changeQuantity}/>
+                            <QuantitiesButton quantity={this.state.quantity} changeQuantity={this.changeQuantity} />
                             <div className="addBtn-container"><button title="add" className="addBtn" onClick={() => {
-                                this.handleClickAdd(this.props.id)
+                                this.handleClickAdd(this.props._id)
                                 Swal.fire({
                                     position: 'center',
                                     icon: 'success',
@@ -87,9 +88,8 @@ const mapStateToProps = (state) => {
     }
 }
 const mapDispatchToProps = (dispatch) => {
-
     return {
-        addToCart: (id, quantity) => { dispatch(addToCart(id, quantity)) }
+        addToCart: (id, quantity) => { dispatch(addToCart(id, quantity)) },
     }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(ProductCard);

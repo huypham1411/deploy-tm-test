@@ -27,7 +27,7 @@ class Card extends React.PureComponent {
             <h4 className="product_name">{this.props.productName}</h4>
             <div className="price_box">
               <span className="current_price">{this.props.price}$</span>
-              <span className="old_price">133$</span>
+              {this.props.oldPrice!=="0"?<span className="old_price">{this.props.oldPrice}$</span>:null}
             </div>
           </div>
         </Link>

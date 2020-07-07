@@ -2,16 +2,17 @@ import { ADD_TO_CART, REMOVE_ITEM, SUB_QUANTITY, ADD_QUANTITY } from '../action/
 import { data } from '../data/data'
 const cartReducer = (state = data, action) => {
     //INSIDE HOME COMPONENT
-    console.log(state)
+    console.log(state,action.type)
 
     if (action.type === ADD_TO_CART) {
         //console.log(state)
         //console.log(action)
         let addedItem = state.items.find(item => item._id === action.id)
         //check if the action id exists in the addedItems
-        let existed_item = state.addedItems.find(item => action.id === item.id)
+        let existed_item = state.addedItems.find(item => action.id === item._id)
         if (existed_item) {
-            existed_item.quantity += 1
+            if(action.quantity){existed_item.quantity+=action.quantity}
+            else{existed_item.quantity += 1}
             state.total = Math.round((state.total + parseFloat(addedItem.price))*100)/100
             localStorage.setItem('state', JSON.stringify(state));
             return {
@@ -35,7 +36,7 @@ const cartReducer = (state = data, action) => {
     if (action.type === REMOVE_ITEM) {
         let itemToRemove = state.addedItems.find(item => action.id === item.id)
         let new_items = state.addedItems.filter(item => action.id !== item.id)
-
+        console.log('reducer',action.id,state.items)
         //calculating the total
         let newTotal = state.total - (parseFloat(itemToRemove.price) * parseFloat(itemToRemove.quantity))
         state.addedItems = new_items
@@ -77,7 +78,7 @@ const cartReducer = (state = data, action) => {
                 ...state,
             }
         }
-
+       
     }
     else {
         return state

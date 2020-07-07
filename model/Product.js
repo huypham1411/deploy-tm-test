@@ -43,8 +43,6 @@ description:{
 },
 price:{
     type:String,
-    min:2,
-    max:255
 },
 rating:{
     type:Number,
@@ -57,6 +55,9 @@ numRate:{
 review:{
     type:Array,
     default:[]
+},
+oldPrice:{
+    type:String
 }
 })
 

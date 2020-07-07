@@ -8,6 +8,9 @@ import { useSelector } from "react-redux";
 import Axios from 'axios';
 function ProductInfo({ match }) {
     const onLog = useSelector((state) => state.loginReducer);
+    const [rv,setRv]=useState('');
+    const [items, setItems] = useState([]);
+    const [arrRv,setArrv]=useState([]);
     useEffect(() => {
         const fetchItems = async () => {
             const data = await fetch(
@@ -22,9 +25,7 @@ function ProductInfo({ match }) {
         // console.log(match.params.id);
         // console.log(data);
     }, [match.params.id]);
-    const [rv,setRv]=useState('');
-    const [items, setItems] = useState([]);
-    const [arrRv,setArrv]=useState([]);
+    
     const submitRv=async ()=>{
         if(!rv){return;}
         await Axios.post('/products/review',{id:items._id,review:rv,username:onLog.username})
@@ -57,6 +58,7 @@ function ProductInfo({ match }) {
                     description={items.description}
                     status={items.status}
                     price={items.price}
+                    oldPrice={items.oldPrice}
                     id={items.id}  
                     rating={items.rating}
                     numRate={items.numRate}
