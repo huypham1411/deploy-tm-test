@@ -33,7 +33,7 @@ const Nav = () => {
   const getList = (e) => {
     if (e.key === "Enter") {
       const name = searchInput.toLowerCase();
-      Axios.get(`'/api' + /products?name=${name}`)
+      Axios.get(`/products?name=${name}`)
         .then((data) => {
           const rSearchInput = name;
           dispatch(searching(rSearchInput, data.data));

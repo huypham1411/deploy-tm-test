@@ -18,7 +18,7 @@ class HotList extends React.Component {
 
   async componentDidMount() {
     do {
-      await Axios.get(`/api/products`)
+      await Axios.get(`/products`)
         .then((data) => data.data)
         .then((data) => this.setState({ productsData: data }))
         .catch((err) => console.log(err));

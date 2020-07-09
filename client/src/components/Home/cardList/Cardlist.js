@@ -52,7 +52,7 @@ class Cardlist extends React.PureComponent {
     do {
       // console.log('num',this.props.number)
       console.log(link);
-      await Axios.get('/api'+ link)
+      await Axios.get(link)
         .then((data) => data.data)
         .then((data) =>
           this.setState({ productsData: data.result, maxPage: data.maxPage })
@@ -97,7 +97,7 @@ class Cardlist extends React.PureComponent {
 
       do {
         console.log(link);
-        await Axios.get('/api/'+ link)
+        await Axios.get(link)
           .then((data) => {
             console.log(data);
             return data.data;

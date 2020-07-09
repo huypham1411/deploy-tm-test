@@ -44,7 +44,7 @@ const SignUp = (props) => {
       return;
     }
     axios
-      .post("/api/SignUp", {
+      .post("/SignUp", {
         name,
         email,
         password,

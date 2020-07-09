@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const Product=require('../model/Product');
 
-router.get('/api',async (req,res)=>{
+router.get('/',async (req,res)=>{
   const type=req.query.filter;
   const sort=req.query.sort;
   const name=req.query.name;
@@ -204,7 +204,7 @@ router.get('/api',async (req,res)=>{
  }
 })
 
-router.post('/api/rate',async (req,res)=>{
+router.post('/rate',async (req,res)=>{
   const id= req.body.id;
   const rating=req.body.rating;
   //console.log(req.body)
@@ -228,7 +228,7 @@ router.post('/api/rate',async (req,res)=>{
   catch(err){res.status(404).send(err)}
 })
 
-router.post('/api/review',async (req,res)=>{
+router.post('/review',async (req,res)=>{
   const id= req.body.id;
   const content=req.body.review;
   const username=req.body.username;
@@ -249,7 +249,7 @@ router.post('/api/review',async (req,res)=>{
   catch(err){res.status(404).send(err)}
 })
 
- router.get('/api/:id',async (req,res)=>{
+ router.get('/:id',async (req,res)=>{
   const id= req.params.id;
   try{
     const product=await Product.findById(id);

@@ -41,7 +41,7 @@ class UserPage extends React.Component {
 
     componentDidMount(){
         
-        axios.get('/api/user/' + this.state.id)
+        axios.get('/user/' + this.state.id)
        .then(data=>{
            console.log('d2',data.data)
             this.setState({
@@ -68,7 +68,7 @@ class UserPage extends React.Component {
           }
     }
     update() {
-        axios.put('/api/user/' + this.state.id, {
+        axios.put('/user/' + this.state.id, {
             name : this.state.name,
             email : this.state.email,
             phonenum: this.state.phonenum,

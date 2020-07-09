@@ -8,7 +8,7 @@ var bcrypt = require('bcryptjs');
 const verify = require('./verifyToken');
 //const { default: ProductList } = require('../../client/src/components/Product/ProductList');
 //Register
-router.post('/api/SignUp',async (req,res)=>{
+router.post('/SignUp',async (req,res)=>{
    //Validate
    const {error} = registerValidation(req.body);
    if(error) {return res.status(400).send(error.details); }
@@ -37,7 +37,7 @@ router.post('/api/SignUp',async (req,res)=>{
 })
 
 //Login
-router.post('/api/login',async (req,res)=>{
+router.post('/login',async (req,res)=>{
 
    if (req.body.role == 'signup'){
       //Validate

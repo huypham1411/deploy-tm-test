@@ -14,7 +14,7 @@ function ProductInfo({ match }) {
     useEffect(() => {
         const fetchItems = async () => {
             const data = await fetch(
-                `/api/products/${match.params.id}`
+                `/products/${match.params.id}`
             )
             const items = await data.json();
             setItems(items);
@@ -28,7 +28,7 @@ function ProductInfo({ match }) {
     
     const submitRv=async ()=>{
         if(!rv){return;}
-        await Axios.post('/api/products/review',{id:items._id,review:rv,username:onLog.username})
+        await Axios.post('/products/review',{id:items._id,review:rv,username:onLog.username})
         .then(res=>{
             if(res.data.status==='success'){
                 setRv('')
