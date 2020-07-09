@@ -36,13 +36,16 @@ app.use(function (req, res, next) {
     res.header("Access-Control-Expose-Headers","auth-token");
     next();
 });
+// app.get('*', (req,res) =>{
+//     res.sendFile(path.join(__dirname+'/client/build/index.html'));
+// });
 //CONNECT TO DATABASE
 mongoose.connect(process.env.DB_CONNECT,{ useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false  }, ()=>{console.log('Connect to DB!')});
 app.use(bodyParser())
 app.use(bodyParser.json())
-app.use('/',authRoute);
-app.use('/products',productRoute);//localhost:3030/products
-app.use('/forgetpassword',forgetPass);
+app.use('/api',authRoute);
+app.use('/api/products',productRoute);//localhost:3030/products
+app.use('/api/forgetpassword',forgetPass);
 app.listen(port, () => {
     console.log(`Server listening at ${port}`);
 });
