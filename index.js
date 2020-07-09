@@ -36,9 +36,9 @@ app.use(function (req, res, next) {
     res.header("Access-Control-Expose-Headers","auth-token");
     next();
 });
-app.get('*', (req,res) =>{
-    res.sendFile(path.join(__dirname+'/client/build/index.html'));
-});
+// app.get('*', (req,res) =>{
+//     res.sendFile(path.join(__dirname+'/client/build/index.html'));
+// });
 //CONNECT TO DATABASE
 mongoose.connect(process.env.DB_CONNECT,{ useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false  }, ()=>{console.log('Connect to DB!')});
 app.use(bodyParser())
