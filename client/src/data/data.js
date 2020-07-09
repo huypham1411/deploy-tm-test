@@ -11,7 +11,7 @@ console.log('data');
 console.log(data)
 
 async function fetchData() {
-    await Axios.get(`/products`)
+    await Axios.get(`/api/products`)
         .then(dataFetch => dataFetch.data)
         .then(dataFetch => {
             data.items = dataFetch

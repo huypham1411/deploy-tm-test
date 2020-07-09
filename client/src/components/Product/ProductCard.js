@@ -26,7 +26,7 @@ class ProductCard extends React.PureComponent {
    
     rating(rate){
         
-        Axios.post('/products/rate',{id:this.props._id,rating:rate}).then(res=>
+        Axios.post('/api/products/rate',{id:this.props._id,rating:rate}).then(res=>
         {if (res.data.status === 'success'){
             this.setState({numRate:res.data.numRate,rating:res.data.rating})
             //console.log('rater',res.data.status)

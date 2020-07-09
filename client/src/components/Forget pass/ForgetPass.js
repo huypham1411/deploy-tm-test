@@ -8,7 +8,7 @@ const Forget_pass = () => {
     //const [alert,setAlert]=useState()
     const getPass = async()=>{
         setSend(true);
-        await Axios.post('/forgetpassword',{email:email})
+        await Axios.post('/api/forgetpassword',{email:email})
         .then(data=>{
             setSend(false)
             setEmail('')

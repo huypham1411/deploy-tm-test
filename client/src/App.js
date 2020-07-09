@@ -28,7 +28,7 @@ function App() {
     {async function fetchUser()
     {
     //console.log('token',token)
-    await axios.get('/login',{headers:{"auth-token":token}}).then((data)=>{
+    await axios.get('/api/login',{headers:{"auth-token":token}}).then((data)=>{
         return dispatch(usrLogin(data.data))})}
 fetchUser();}
 }
