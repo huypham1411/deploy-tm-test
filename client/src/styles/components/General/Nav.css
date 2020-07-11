@@ -3,7 +3,8 @@
   flex-flow: row nowrap;
   align-items: center;
   justify-content: space-between;
-  background: #b0eacd;
+  /* background: #b0eacd; */
+  background-image: linear-gradient( 90.9deg,  rgba(255,187,187,1) -8.8%, rgba(255,220,177,1) 12.4%, rgba(255,249,177,1) 35.6%, rgba(220,255,177,1) 59.6%, rgba(177,218,255,1) 84%, rgba(222,177,255,1) 107.9% );
   height: 47px;
   max-width: 100%;
   max-height: fit-content;
@@ -14,7 +15,7 @@
 .navbar-nav {
   display: flex;
   width: 100%;
-  background-color: #b0eacd;
+  /* background-image: linear-gradient( 90.9deg,  rgba(255,187,187,1) -8.8%, rgba(255,220,177,1) 12.4%, rgba(255,249,177,1) 35.6%, rgba(220,255,177,1) 59.6%, rgba(177,218,255,1) 84%, rgba(222,177,255,1) 107.9% ); */
   z-index: 1;
   position: absolute;
 }
@@ -67,14 +68,14 @@
 .nav-bar li a {
   /* font-family: Fondamento; */
   font-style: normal;
-  font-weight: normal;
   font-size: 15px;
   line-height: 21px;
   color: #000;
+  font-weight: normal;
 }
 
 .nav-bar li a:hover {
-  background-color: #00dd75;
+  background-image: radial-gradient( circle 862px at 6% 18%,  rgba(21,219,149,1) 9.4%, rgba(26,35,160,1) 83.6% );
   color: #fff;
   border-radius: 10px;
 }
@@ -160,6 +161,9 @@
   .nav-bar {
     position: relative;
     display: flex;
+  }
+  .navbar-nav{
+    background: #fff;
   }
   .nav-item {
     display: contents;

@@ -19,6 +19,7 @@ const Cart = lazy(()=>import("./components/General/Cart"));
 const SearchPage = lazy(()=>import ("./containers/SearchPage"));
 const UserPage = lazy(()=>import ("./containers/UserPage"));
 const MessengerCustomerChat = lazy(()=>import('react-messenger-customer-chat'));
+const ChangePass = lazy(()=>import('./containers/ChangePass'));
 
 function App() {
   const dispatch=useDispatch();
@@ -53,6 +54,7 @@ fetchUser();}
           <Route path="/Products/:id" component={WaitingComponent(ProductInfo)}/>
           <Route path="/Search" component={WaitingComponent(SearchPage)}/>
           <Route path="/User" component={WaitingComponent(UserPage)}/>
+          <Route path="/ChangePass" component={WaitingComponent(ChangePass)}/>
           <Route path="/" component={NotFound}/>
           <Route component={NotFound}/>
       </Switch>
@@ -60,7 +62,7 @@ fetchUser();}
       <div>
       <MessengerCustomerChat
         pageId="100367225056687"
-        appId="2687294444826178"
+        appId="1148277815539948"// appId="2687294444826178"
       />
       </div>
           <Footer />

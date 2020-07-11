@@ -1,7 +1,7 @@
 import Axios from 'axios';
 console.log('localStorage --')
 const localStore = JSON.parse(localStorage.getItem('state')) || {}
-console.log(localStore)
+console.log(localStore,'localStore')
 let data = {
     items: localStore.items || [],
     addedItems: localStore.addedItems || [],

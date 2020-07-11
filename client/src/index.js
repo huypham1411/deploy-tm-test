@@ -10,7 +10,7 @@ import searchReducer from './reducer/searchReducer';
 import paginationReducer from './reducer/paginationReducer';
 import { Provider } from 'react-redux';
 import { createStore,combineReducers } from 'redux';
-import { BrowserRouter } from 'react-router-dom';
+import {BrowserRouter} from 'react-router-dom';
 
 // import "bootstrap/dist/css/bootstrap.css";
 

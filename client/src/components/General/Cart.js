@@ -42,7 +42,8 @@ class Cart extends PureComponent {
                     return (
                         <tr key={item.id}>
                             <td className='product_remove'>
-                                <li><FontAwesomeIcon icon={faTrash} onClick={() => { this.handleRemove(item.id) }}/></li>
+                                <li><FontAwesomeIcon icon={faTrash} onClick={() => { this.handleRemove(item.id);
+                                }}/></li>
                             </td>
                             <td className="product_thumb">
                                 <img src={item.img} alt={item.name} className="" />
@@ -78,7 +79,8 @@ class Cart extends PureComponent {
             ) :
 
             (
-                <p style={{ textAlign: "center" }}>Nothing.</p>
+                
+            <p style={{ textAlign: "center" }}>{localStorage.removeItem('state')}Nothing.</p>
 
             )
 

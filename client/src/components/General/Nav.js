@@ -19,8 +19,19 @@ const Nav = () => {
   const [searchInput, setSearchInput] = useState("");
   const styles = {
     borderRadius: 10,
-    backgroundColor: "#00DD75",
     color: "#fff",
+  };
+  const styles1 = {
+    borderRadius: 10,
+    color: "red",
+  };
+  const styles2 = {
+    borderRadius: 10,
+    color: "green",
+  };
+  const styles3 = {
+    borderRadius: 10,
+    color: "blue",
   };
   //https://stackoverflow.com/questions/47879663/root-navlink-always-get-active-class-react-router-dom
   const checkActive = (match, location) => {
@@ -70,7 +81,7 @@ const Nav = () => {
           <li className="nav-item">
             <NavLink
               to="/Products"
-              activeStyle={styles}
+              activeStyle={styles1}
               onClick={() => {
                 dispatch(sortChoose("default"));
                 dispatch(filterChoose("default"));
@@ -81,12 +92,12 @@ const Nav = () => {
             </NavLink>
           </li>
           <li className="nav-item">
-            <NavLink to="/Policy" activeStyle={styles}>
+            <NavLink to="/Policy" activeStyle={styles2}>
               Policy
             </NavLink>
           </li>
           <li className="nav-item">
-            <NavLink to="/About" activeStyle={styles}>
+            <NavLink to="/About" activeStyle={styles3}>
               About us
             </NavLink>
           </li>

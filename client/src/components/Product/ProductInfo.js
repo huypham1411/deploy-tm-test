@@ -94,14 +94,14 @@ function ProductInfo({ match }) {
                                     <div class="product_ratting mb-10">
                                     </div>
                                     <div class="product_review_form">
-                                        <form action="#">
+                                        <form action="">
                                             <div class="row">
                                                 <div class="col-12">
                                                     <label for="review_comment">Your review </label>
-                                                    <textarea name="comment" id="review_comment" onChange={(e)=>setRv(e.target.value)}></textarea>
+                                                    <textarea name="comment" id="review_comment" value={rv} onChange={(e)=>setRv(e.target.value)}></textarea>
                                                 </div> 
                                             </div>
-                                            {onLog.username?<button type="submit" onClick={submitRv}>Submit</button>:<p>You need login to submit review</p>}
+                                            {onLog.username?<button type="submit" onClick={event=>{submitRv();event.preventDefault();}}>Submit</button>:<p>You need login to submit review</p>}
                                          </form>   
                                     </div> 
                                 </div>     

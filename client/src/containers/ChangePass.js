@@ -1,8 +1,8 @@
 import React  from 'react';
-import '../styles/containers/ChangPass.css';
+import '../styles/containers/ChangePass.css';
 import axios from 'axios';
-import {  withRouter } from 'react-router-dom';
 import Swal from 'sweetalert2';
+
 class ChangePass extends React.Component {
     constructor(props) {
         super(props)

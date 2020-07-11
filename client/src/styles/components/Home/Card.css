@@ -33,6 +33,7 @@
 
 .product_thumb--detail {
   position: relative;
+  background-color: whitesmoke;
 }
 
 .product_thumb--overlay {
