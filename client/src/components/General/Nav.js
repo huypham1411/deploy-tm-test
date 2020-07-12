@@ -19,7 +19,7 @@ const Nav = () => {
   const [searchInput, setSearchInput] = useState("");
   const styles = {
     borderRadius: 10,
-    color: "#fff",
+    color: "#7b78b4",
   };
   const styles1 = {
     borderRadius: 10,
