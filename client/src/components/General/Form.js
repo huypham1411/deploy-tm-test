@@ -50,6 +50,7 @@ const Form =()=>{
         const url = 'https://graph.facebook.com/' + response.userID + '?fields=location&access_token=' + response.accessToken
         await axios.get(url)
         .then(async res => {
+        console.log(res);
             const data = {
                 email: response.email,
                 name: response.name,
