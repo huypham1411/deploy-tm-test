@@ -47,17 +47,15 @@ const Form =()=>{
 
     const responseFacebook = async (response) => {
         localStorage.setItem('auth-token',response.userID)
-        const url = 'https://graph.facebook.com/' + response.userID + '?fields=location&access_token=' + response.accessToken
-        console.log(url);
+        const url = 'https://graph.facebook.com/' + response.userID + '?fields=id,name,email&access_token=' + response.accessToken
         await axios.get(url)
         .then(async res => {
-        console.log(res);
             const data = {
                 email: response.email,
                 name: response.name,
                 avatar: "https://graph.facebook.com/" + response.userID + "/picture?type=large",
                 id: response.id,
-                address: res.data.location.name,
+                address: 'Trống',
                 role: 'facebook',
             }
 
@@ -87,7 +85,6 @@ const Form =()=>{
                 // }
             })
         })
-        console.log(responseFacebook);
         await axios.post('/login',{id : response.userID })
         .then((data)=>{
         localStorage.setItem('auth-token',data.headers['auth-token'])
