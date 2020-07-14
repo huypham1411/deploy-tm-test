@@ -48,6 +48,7 @@ const Form =()=>{
     const responseFacebook = async (response) => {
         localStorage.setItem('auth-token',response.userID)
         const url = 'https://graph.facebook.com/' + response.userID + '?fields=location&access_token=' + response.accessToken
+        console.log(url);
         await axios.get(url)
         .then(async res => {
         console.log(res);
@@ -86,7 +87,7 @@ const Form =()=>{
                 // }
             })
         })
-        
+        console.log(responseFacebook);
         await axios.post('/login',{id : response.userID })
         .then((data)=>{
         localStorage.setItem('auth-token',data.headers['auth-token'])
