@@ -74,16 +74,13 @@
   font-weight: normal;
 }
 
+
 .nav-bar li a:hover {
   background-image: radial-gradient( circle 862px at 6% 18%,  rgba(21,219,149,1) 9.4%, rgba(26,35,160,1) 83.6% );
   color: #fff;
   border-radius: 10px;
 }
 
-.nav-bar .active li {
-  /* class active dùng trong react-router*/
-  color: #fff;
-}
 .nav-bar .img-container {
   width: fit-content;
   /* margin-right: 20px; */
@@ -151,10 +148,7 @@
     color: #000;
 }
 */
-.nav-bar .active li {
-  /* class active dùng trong react-router*/
-  color: #fff;
-}
+/*  */
 
 /* Tablet and Mobile */
 @media only screen and (max-width: 991px) {
@@ -163,7 +157,11 @@
     display: flex;
   }
   .navbar-nav{
-    background: #fff;
+    background: snow;
+  }
+  .nav-bar .active li {
+    /* class active dùng trong react-router*/
+    color: #000;
   }
   .nav-item {
     display: contents;

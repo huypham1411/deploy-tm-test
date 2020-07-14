@@ -1,3 +1,4 @@
+
 .circle-wrapper {
   padding: 68px 0 60px;
   display: flex;
@@ -25,4 +26,15 @@
   }
 }
 
+@media only screen and (max-width: 640px) {
+    .circle-wrapper{
+        margin-top: -120px;
+    }
+}
+
+@media only screen and (max-width: 573px) {
+    .circle-wrapper{
+        margin-top: -60px;
+    }
+}
 

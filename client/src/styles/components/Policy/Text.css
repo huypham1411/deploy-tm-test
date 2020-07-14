@@ -39,24 +39,19 @@ td {
 }
 
 #policy_toc_container {
-  background: #f9f9f9 none repeat scroll 0 0;
+  background: #f9f9f9;
   border: 1px solid #aaa;
   display: table;
   font-size: 95%;
   margin-bottom: 1em;
   padding: 20px;
-  width: 45%;
-}
-
-@media only screen and (max-width: 768px) {
-  #policy_toc_container {
-    width: 100%;
-  }
+  width: 80%;
 }
 
 .policy_toc_title {
-  font-weight: 700;
-  text-align: center;
+    font-weight: 700;
+    font-size: large;
+    text-align: center;
 }
 
 #policy_toc_container li,
