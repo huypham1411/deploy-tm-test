@@ -38,6 +38,7 @@ class HotList extends React.Component {
                   price={item.price}
                   productName={item.name}
                   id={item._id}
+            oldPrice={item.oldPrice}
                   handleClick={this.handleClick}
                 />
             </div>
